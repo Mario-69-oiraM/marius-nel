@@ -427,8 +427,14 @@ The static rebuild in `index.html` carried the Notion content across close to
 verbatim — all seven technology blocks, the three long Skills essays, the
 "I possess a talent for…" quote and the `210,000` figure are all in it. So
 every cut in §2 still applies as written. Line numbers are against
-`index.html` at commit `931299a`; they will drift as NEXAA-45 edits the file,
-so match on the quoted text rather than the number.
+`index.html` at commit `8ea2df4`, re-verified 3 September 2026 — every anchor
+below still matches. They will drift as NEXAA-45 edits the file, so match on
+the quoted text rather than the number.
+
+One thing the re-check surfaced: the current meta description is **208
+characters**, so search results and link previews cut it off mid-sentence. The
+replacement in §3 is 147. That makes the line-7 swap the highest-value single
+edit in this table, not a cosmetic one.
 
 | Line | Today | Change |
 |---|---|---|
@@ -471,4 +477,6 @@ undated, and Decipha is still absent.
   in §4, US vs Australian spelling, whether Echodyne is named up front, and
   confirmation of the audience assumption in §1.
 - **Not published.** Nothing here goes live without the user's explicit
-  approval.
+  approval. `index.html` is deliberately untouched by this document — three of
+  the five open questions (spelling, Echodyne, the `210,000` figure) change the
+  exact words, and this repo publishes on push.
