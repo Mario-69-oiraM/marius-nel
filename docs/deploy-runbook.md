@@ -21,6 +21,25 @@ custom domain, staging URL — is in place. The cutover is deliberately *not* pa
 of that scope: it is owner-only and gated on the user's approval, and it belongs
 to the parent review, NEXAA-45.
 
+## Why the domain is still on Notion
+
+Asked on NEXAA-45, 2026-09-03. Three reasons, in order of what actually blocks:
+
+1. **It needs the owner's explicit go.** Repointing `www.marius-nel.com` is a
+   change to a live, external-facing domain. The standing constraint is that
+   nothing external-facing ships without that approval, and it has not been
+   given. This is the only real blocker.
+2. **It is owner-only regardless.** The DNS record lives in the registrar, not
+   in this repo, and this team's PAT is refused by the Pages API (403, table
+   below). Neither half of the cutover can be executed from a checkout.
+3. **Board writes have been failing.** `paperclip.fixlink.org` does not resolve
+   from this machine (NXDOMAIN, confirmed against 1.1.1.1 as well), so status
+   comments written on earlier heartbeats never landed on the issue. The work
+   was done; the reporting of it was not visible. That is why this looks stalled.
+
+Re-measured 2026-09-03: staging URL 200 and `verify-site.sh` PASS;
+`check-domain.sh` reports `CNAME -> external.notion.site`, still serving Notion.
+
 ## Deployment method: branch deploy, not Actions
 
 **Use Pages "Deploy from a branch" (`main` / `/ (root)`). Do not use
