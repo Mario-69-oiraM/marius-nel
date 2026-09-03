@@ -9,7 +9,7 @@ published. Nothing goes live without the user's explicit approval.
 
 ---
 
-## 0. Four questions, answerable in one reply
+## 0. Five questions, answerable in one reply
 
 The copy in §3 is finished and buildable as written. These four answers change
 specific lines rather than the structure, so the design work on NEXAA-45 does
@@ -27,6 +27,9 @@ not need to wait on them — the build does.
    is live on the site right now. I used the conservative figure in every case.
 4. **US or Australian spelling?** §3 is written US-side because the reader in
    §1 is US-based; the current build is Australian. Trivially reversible.
+5. **Name Echodyne in the title and preview, or not?** I left it out and kept
+   the five strongest names; the build currently includes it. Both versions
+   are written in §3 — pick one.
 
 Nothing here is published, and nothing goes live without the user's explicit
 approval.
@@ -164,6 +167,23 @@ MYOB. I build teams from scratch and take on the ones that are struggling.
 147 characters. Names the employers, because in a link preview the employer
 names do the credibility work faster than any adjective.
 
+**On Echodyne.** The current build names Echodyne in both the hero lede and
+the meta description; I have left it out of both above. That is a deliberate
+call, not an oversight: five employer names is already at the limit of what a
+reader parses in a preview snippet, and Amazon, AWS and Oracle Health are the
+three that do the most work with a US hiring reader. Echodyne stays on the
+page — it is the "defense technology" in the Career lede and keeps its
+timeline entry. If Marius would rather it be named up front, this version
+fits in 152 characters:
+
+```
+Engineering leader, 20+ years across Amazon, AWS, Oracle Health, Echodyne and
+MYOB. I build teams from scratch and take on the ones that are struggling.
+```
+
+Swapping NAB out rather than adding a sixth name is the trade; NAB is the
+oldest of the six.
+
 ### Open Graph
 
 ```
@@ -174,15 +194,19 @@ og:type         profile
 ```
 
 The last line of the description is the differentiator, so it goes in the
-preview.
+preview. `og:title` and `og:type` in the current build already match this
+exactly — no change needed on either.
 
 **Leave `og:image` alone.** It already points at
-`assets/img/og-card.jpg`, a real 1200×630 card with matching
-`og:image:width`, `og:image:height` and `og:image:alt`. An earlier draft of
-this document pointed it at the portrait JPEG; that would have been a
-regression. The `og:image:alt` text should pick up the employer list from the
-meta description above — Amazon, AWS, Oracle Health, NAB, MYOB — so the alt
-and the visible copy agree.
+`https://www.marius-nel.com/assets/img/og-card.jpg`, a real 1200×630 card with
+matching `og:image:width`, `og:image:height` and `og:image:alt`. An earlier
+draft of this document pointed it at the portrait JPEG; that would have been a
+regression. The absolute URL is correct and should stay absolute — relative
+`og:image` values are ignored by most crawlers.
+
+The `og:image:alt` currently reads `…Amazon, AWS, Oracle Health, NAB.` It
+should pick up the full employer list from the meta description — **add MYOB**
+— so the alt and the visible copy agree.
 
 ---
 
@@ -397,18 +421,54 @@ is right, the other one is currently published.
 
 ---
 
-## 5. Handover
+## 5. Applied against the current build
+
+The static rebuild in `index.html` carried the Notion content across close to
+verbatim — all seven technology blocks, the three long Skills essays, the
+"I possess a talent for…" quote and the `210,000` figure are all in it. So
+every cut in §2 still applies as written. Line numbers are against
+`index.html` at commit `931299a`; they will drift as NEXAA-45 edits the file,
+so match on the quoted text rather than the number.
+
+| Line | Today | Change |
+|---|---|---|
+| 6 | `<title>Marius Nel — Software Engineering Leader` | append `, Seattle` |
+| 7 | meta description | replace with §3 (see the Echodyne note) |
+| 10 | `og:type` `profile` | **correct — no change** |
+| 13 | `og:title` | **correct — no change** |
+| 14 | `og:description` | replace with §3 |
+| 17 | `og:image` absolute URL | **correct — no change** |
+| 20 | `og:image:alt` | add `MYOB` to the employer list |
+| 91 | eyebrow `Software Engineering Leadership` | → `Software engineering leader · Seattle` |
+| 93–97 | hero lede | replace with §3 lede |
+| 99–102 | `"I possess a talent for…"` pull quote | replace with the PR-review line in §3 |
+| — | *(nothing)* | insert availability line — **holds for Marius's yes** |
+| 107 | `Book time with me` | → `Book 30 minutes` |
+| 109–116 | two ghost buttons, equal weight | demote to text links (design call, NEXAA-45) |
+| 129–130 | eyebrow `Career Highlights` + `Outcomes, measured` | → `Outcomes` + §3 lede |
+| 246–247 | eyebrow `Skills` + `How I lead` | → `How I work` |
+| 250–266 | 3 essays, ~150 words each | replace with §3's three ~50-word items — the headings change too (`Communication / Growth / Customer Focus` → `Hands-on / Turnarounds / Growing people`), so this is a substitution, not a trim |
+| 259 | `210,000` hardware assets | → `21,000+` — see §4; this is the live order-of-magnitude conflict |
+| 272–328 | whole `#tech` section, 7 blocks | **delete**, replaced by the one Technology line at the end of How I work |
+| 333–334 | eyebrow `✉️ Contact` + `Let's talk` | → `Get in touch` + §3 lede |
+| 363 | footer quote | **keep as-is** |
+
+**Timeline corrections** (§3, Career) — the duplicate NAB entry is worse than
+the Notion page suggested: lines 201–203 are *three* consecutive NAB entries,
+`Service Delivery Manager` / `Integration Delivery Manager` / `Service
+Delivery Manager`. Collapse to one line. Oracle Health (line 233) is still
+undated, and Decipha is still absent.
+
+## 6. Handover
 
 - **Product Designer (NEXAA-45):** the structure in §2 is what the design has
   to hold — hero with one primary button, five outcome cards, three "how I
   work" items with a technology line, timeline, contact. Two sections fewer
   than today.
-- **Build:** §3 is final text. Applying it to `index.html` touches the
-  `<title>`, description, OG tags, hero, the Skills section (rewrite), the
-  Technical Experience section (delete, replaced by one line), and the
-  timeline (three corrections).
-- **Blocked on Marius:** the availability line, the five conflicting numbers,
-  US vs Australian spelling, and confirmation of the audience assumption
-  in §1.
+- **Build:** §3 is final text and §5 is the diff to apply. Every change above
+  is buildable now except the availability line.
+- **Blocked on Marius:** the availability line, the five conflicting numbers
+  in §4, US vs Australian spelling, whether Echodyne is named up front, and
+  confirmation of the audience assumption in §1.
 - **Not published.** Nothing here goes live without the user's explicit
   approval.
