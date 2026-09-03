@@ -95,6 +95,24 @@ indexable, not legible on a phone.
 
 Verified at 390 px, 414 px and 1440 px in both themes; no horizontal overflow.
 
+### The link preview, specifically
+
+Almost nobody arrives here by search — they arrive by name, from a LinkedIn
+message, a Slack DM or an application. The unfurled card is therefore the first
+impression, not the hero.
+
+`og:image` now points at a purpose-built **1200×630** card
+(`assets/img/og-card.jpg`) carrying the name, the three-country line, the four
+recognisable employers and the domain. It replaced the portrait: LinkedIn,
+Slack and iMessage crop to 1.91:1, and the source portrait is 1690×1792 — a
+tall image that loses the face to that crop. `og:image:width`/`height` are
+declared so the first scrape renders at full size rather than as a thumbnail,
+and `og:image:alt` describes it for screen readers. `twitter:image` is set
+explicitly rather than relying on `og:` fallback.
+
+The card is legible at the ~500 px width a real feed renders it at, which is
+why it carries five short lines and not a paragraph.
+
 ## Editorial changes worth knowing about
 
 Copy was tightened but no claim was changed. Specifically:
@@ -110,10 +128,23 @@ from the Notion source.
 
 ## Not done — needs a decision
 
-The custom domain has **not** been claimed. There is deliberately no `CNAME`
-file, so `www.marius-nel.com` still resolves to Notion. Cutover steps are in the
-README; they need approval because they take the live domain off Notion.
+**Nothing here is live.** The site is committed to `main` and nothing more.
 
-GitHub Pages also is not enabled yet — see the README. The repository is
-currently **private**, and Pages on a private repository requires a paid GitHub
-plan; on the free plan the repository has to be made public first.
+- The custom domain has **not** been claimed — `www.marius-nel.com` still
+  resolves to Notion. Cutover takes the live domain off Notion, so it needs the
+  user's explicit approval.
+- GitHub Pages is not enabled. The repository is **private**, and Pages on a
+  private repository requires a paid GitHub plan; on the free plan the
+  repository has to be made public first.
+
+Both are repository-settings changes that cannot be made from a checkout.
+Publishing and cutover are tracked on **NEXAA-48**, not here; the README carries
+the current procedure. Until that lands, the absolute `og:`/canonical URLs point
+at a domain the site does not yet serve from — expected, and correct the moment
+the domain is cut over.
+
+The rewritten copy in `docs/content-nexaa-47.md` (Mike, Growth & Content) is
+**not applied to this page**. It proposes collapsing Career Highlights, Skills
+and Technical Experience into two sections plus one line. That is a content
+decision above my line — it needs the user's call before I restructure the page
+around it.
