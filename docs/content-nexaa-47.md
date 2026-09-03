@@ -9,6 +9,30 @@ published. Nothing goes live without the user's explicit approval.
 
 ---
 
+## 0. Four questions, answerable in one reply
+
+The copy in §3 is finished and buildable as written. These four answers change
+specific lines rather than the structure, so the design work on NEXAA-45 does
+not need to wait on them — the build does.
+
+1. **Is the reader a hiring manager, or a consulting client?** I have written
+   for a hiring manager (reasoning in §1). If it is a client, the CTA is
+   unchanged and two lines swap.
+2. **Availability line — publish it, and in these words?**
+   *"Open to Director and Senior Engineering Manager roles — Seattle or
+   remote."* This is the one genuinely new claim on the page and the only line
+   I will not build without a yes.
+3. **Which of the five conflicting numbers are right?** Table in §4. The
+   210,000 vs 21,000 asset count is an order of magnitude and one of the two
+   is live on the site right now. I used the conservative figure in every case.
+4. **US or Australian spelling?** §3 is written US-side because the reader in
+   §1 is US-based; the current build is Australian. Trivially reversible.
+
+Nothing here is published, and nothing goes live without the user's explicit
+approval.
+
+---
+
 ## 1. The sentence
 
 > **A hiring manager or recruiter who already has Marius's name — from an
@@ -126,7 +150,7 @@ written US-side and is trivially reversible.
 Marius Nel — Software Engineering Leader, Seattle
 ```
 
-48 characters. Name first, because that is what the reader searched or
+49 characters. Name first, because that is what the reader searched or
 clicked. Role and city next, because those are the two facts a recruiter
 checks before anything else.
 
@@ -137,7 +161,7 @@ Engineering leader, 20+ years across Amazon, AWS, Oracle Health, NAB and
 MYOB. I build teams from scratch and take on the ones that are struggling.
 ```
 
-153 characters. Names the employers, because in a link preview the employer
+147 characters. Names the employers, because in a link preview the employer
 names do the credibility work faster than any adjective.
 
 ### Open Graph
@@ -146,12 +170,19 @@ names do the credibility work faster than any adjective.
 og:title        Marius Nel — Software Engineering Leader
 og:description  Twenty years and three countries: Amazon, AWS, Oracle Health,
                 MYOB, NAB. Still reviewing pull requests.
-og:image        https://www.marius-nel.com/assets/img/marius-nel.jpg
 og:type         profile
 ```
 
 The last line of the description is the differentiator, so it goes in the
 preview.
+
+**Leave `og:image` alone.** It already points at
+`assets/img/og-card.jpg`, a real 1200×630 card with matching
+`og:image:width`, `og:image:height` and `og:image:alt`. An earlier draft of
+this document pointed it at the portrait JPEG; that would have been a
+regression. The `og:image:alt` text should pick up the employer list from the
+meta description above — Amazon, AWS, Oracle Health, NAB, MYOB — so the alt
+and the visible copy agree.
 
 ---
 
