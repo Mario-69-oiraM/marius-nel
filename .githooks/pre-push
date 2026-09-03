@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+# Runs the publish gate before every push.
+#
+# On this repository a push to `main` *is* the deploy — Pages serves the branch
+# directly. There is no CI stage between the two: the PAT this project uses
+# cannot push workflow files (no `workflow` scope) and 403s on the Actions API,
+# so a server-side check is not available to us. This hook is the only place the
+# gate can run automatically, which makes it load-bearing rather than a nicety.
+#
+# Install with: ./scripts/install-hooks.sh
+# Bypass with:  git push --no-verify   (deliberate escape hatch)
+
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+# Only gate pushes that actually change published files. Doc-only pushes and
+# branch deletions do not need the site to be servable.
+PUBLISHED_CHANGED=0
+while read -r _local_ref local_sha _remote_ref remote_sha; do
+  [ "$local_sha" = "0000000000000000000000000000000000000000" ] && continue
+
+  if [ "$remote_sha" = "0000000000000000000000000000000000000000" ]; then
+    RANGE_FILES=$(git diff --name-only "$(git merge-base "$local_sha" origin/main 2>/dev/null || echo "$local_sha")" "$local_sha" 2>/dev/null || true)
+  else
+    RANGE_FILES=$(git diff --name-only "$remote_sha" "$local_sha" 2>/dev/null || true)
+  fi
+
+  # An empty file list means we could not work out the range — gate rather than
+  # assume the push is harmless.
+  if [ -z "$RANGE_FILES" ] || printf '%s\n' "$RANGE_FILES" | grep -qE '\.html$|^assets/|^robots\.txt$|^sitemap\.xml$|^CNAME$|^\.nojekyll$'; then
+    PUBLISHED_CHANGED=1
+  fi
+done
+
+if [ "$PUBLISHED_CHANGED" -eq 0 ]; then
+  echo "pre-push: no published files changed — skipping the site gate."
+  exit 0
+fi
+
+echo "pre-push: running the publish gate..."
+if ! "$REPO_ROOT/scripts/verify-site.sh"; then
+  cat >&2 <<'MSG'
+
+pre-push: BLOCKED — the publish gate failed.
+
+A push to `main` republishes the live site, so this would have deployed a page
+that does not meet the bar the migration off Notion exists to enforce.
+
+Fix the failure above, or bypass deliberately with:
+  git push --no-verify
+MSG
+  exit 1
+fi

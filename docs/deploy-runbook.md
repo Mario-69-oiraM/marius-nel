@@ -14,21 +14,29 @@ The PAT available to this team can push code and open PRs, but it is not
 authorised for the Actions or Pages REST APIs. Probed directly against
 `Mario-69-oiraM/marius-nel`:
 
-| Endpoint | Result |
+| Probe | Result |
 | --- | --- |
 | `GET /repos/{repo}` | 200 |
 | `GET /repos/{repo}/deployments` | 200 |
-| `GET /repos/{repo}/pages` | **403** `Resource not accessible by personal access token` |
+| `POST /repos/{repo}/pages` | **403** `Resource not accessible by personal access token` |
+| `GET /repos/{repo}/pages` | **403** |
 | `GET /repos/{repo}/pages/builds` | **403** |
 | `GET /repos/{repo}/actions/permissions` | **403** |
 | `GET /repos/{repo}/actions/workflows` | **403** |
+| `git push` of any `.github/workflows/*.yml` | **rejected** `refusing to allow a Personal Access Token to create or update workflow ... without 'workflow' scope` |
 
-Two consequences:
+Three consequences:
 
-1. A Pages-via-Actions setup could not be monitored or debugged by this team —
+1. Pages cannot be *enabled* from here. The `POST` to create the Pages site was
+   attempted directly and returned 403 — this is measured, not inferred. It has
+   to be switched on in the web UI, once, by the owner.
+2. A Pages-via-Actions setup could not be monitored or debugged by this team —
    we cannot read run status or logs. Branch deploy has no such dependency.
-2. Pages cannot be *enabled* via the API either. It has to be switched on in
-   the web UI, once, by the owner.
+3. **There can be no GitHub Actions CI on this repository at all** while this is
+   the only credential. The blocker is not just the REST API: the PAT lacks the
+   `workflow` scope, so the remote refuses the *push* of a workflow file. A CI
+   gate cannot be committed, let alone run. This is why the publish gate is
+   enforced by a local pre-push hook instead — see "The gate" below.
 
 Branch deploy is also simply the right fit: the site is plain HTML/CSS/JS with
 no build step, so there is nothing for a workflow to do. `.nojekyll` at the repo
@@ -137,17 +145,36 @@ in step 1.
 
 Push to `main`. That is it. Pages rebuilds within a minute.
 
-Run the gate before pushing:
+## The gate
+
+Because a push to `main` *is* the deploy, and because Actions is unavailable to
+us (see the table above), the gate runs client-side as a `pre-push` hook. Hooks
+are checked into `.githooks/` so they are reviewable; `core.hooksPath` is local
+config, so **every clone has to run this once**:
 
 ```sh
-./scripts/verify-site.sh
+./scripts/install-hooks.sh
 ```
 
-It reads raw bytes and never runs JavaScript, so it fails if the page ever
-regresses into a JS-rendered shell — which is the specific failure the whole
+After that, pushes that touch published files (`*.html`, `assets/`, `robots.txt`,
+`sitemap.xml`, `CNAME`, `.nojekyll`) run `scripts/verify-site.sh` first and abort
+on failure. Docs-only pushes skip it. The escape hatch is `git push --no-verify`.
+
+The gate reads raw bytes and never executes JavaScript, so it fails if the page
+ever regresses into a JS-rendered shell — the specific failure this whole
 migration exists to fix. Against the current Notion site it reports 15 words and
 a missing canonical link; against this repository, 780 words and a full set of
 metadata.
+
+Verified 2026-09-03 against all three paths: docs-only push skips the gate, a
+push touching `index.html` runs it and passes, and replacing `index.html` with a
+JS-only shell (`<title>Notion</title>`, one word of text) blocks the push.
+
+Being client-side, the hook is advisory rather than enforced — it cannot stop
+someone who has not installed it. That is the ceiling of what this credential
+allows. If a server-side gate is wanted later, it needs a PAT with `workflow`
+scope, which is a credential change for the CTO to weigh, not something this
+repository can fix.
 
 ## Cost
 

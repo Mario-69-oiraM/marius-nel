@@ -17,6 +17,8 @@ assets/img/           headshot and favicon
 deploy/CNAME          custom domain, prepared but not active (see the runbook)
 docs/deploy-runbook.md  how this is hosted, published and cut over
 scripts/verify-site.sh  publish gate — asserts the HTML renders without JS
+scripts/install-hooks.sh  points git at .githooks (run once per clone)
+.githooks/pre-push    runs the gate before any push that changes the site
 ```
 
 No build step, no package manager, no framework. Edit the HTML and push.
@@ -31,6 +33,14 @@ python3 -m http.server 8000
 Opening `index.html` directly with `file://` also works.
 
 ## Before pushing
+
+Run this once per clone, and the gate then runs itself on every push:
+
+```sh
+./scripts/install-hooks.sh
+```
+
+To run it by hand:
 
 ```sh
 ./scripts/verify-site.sh
@@ -57,6 +67,10 @@ Actions REST APIs, so it cannot be scripted.
 The method is **Pages "Deploy from a branch"** (`main` / `/ (root)`), not
 Pages-via-Actions, for that same reason. Once it is on, publishing is just
 `git push` to `main`; `.nojekyll` makes Pages serve the files verbatim.
+
+There is also no GitHub Actions CI here, and cannot be with the current
+credential — the PAT has no `workflow` scope, so the remote rejects the push of
+a workflow file outright. The gate runs as a pre-push hook instead.
 
 Two things gate going live, both owner decisions:
 
