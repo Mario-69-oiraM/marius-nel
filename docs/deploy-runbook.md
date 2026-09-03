@@ -3,8 +3,10 @@
 Hosting, publishing and the domain cutover. Written for the repository owner;
 the steps marked **owner-only** cannot be done from a checkout.
 
-Verified 2026-09-03. Re-verified against the live staging URL later the same
-day — `./scripts/verify-site.sh` PASS, 780 no-JS words, all assets reachable.
+Verified 2026-09-03, and re-verified twice against the live staging URL later
+the same day — `./scripts/verify-site.sh` PASS on each, 780 no-JS words, all
+assets reachable, `main` in sync with `origin/main`. Nothing has regressed and
+nothing in the tree has changed since the site went up.
 
 **Current state: the site is live on the staging URL.** Pages is enabled and
 serving <https://mario-69-oiram.github.io/marius-nel/>. The only step left is
