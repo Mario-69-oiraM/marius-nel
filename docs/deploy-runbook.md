@@ -3,12 +3,18 @@
 Hosting, publishing and the domain cutover. Written for the repository owner;
 the steps marked **owner-only** cannot be done from a checkout.
 
-Verified 2026-09-03.
+Verified 2026-09-03. Re-verified against the live staging URL later the same
+day — `./scripts/verify-site.sh` PASS, 780 no-JS words, all assets reachable.
 
 **Current state: the site is live on the staging URL.** Pages is enabled and
 serving <https://mario-69-oiram.github.io/marius-nel/>. The only step left is
 the domain cutover in step 2, which waits on the user's explicit go. The live
 domain `www.marius-nel.com` is still served by Notion and is untouched.
+
+Everything NEXAA-48 asked for — repo, static site, publish pipeline, prepared
+custom domain, staging URL — is in place. The cutover is deliberately *not* part
+of that scope: it is owner-only and gated on the user's approval, and it belongs
+to the parent review, NEXAA-45.
 
 ## Deployment method: branch deploy, not Actions
 
