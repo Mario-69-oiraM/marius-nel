@@ -17,6 +17,7 @@ assets/img/           headshot and favicon
 deploy/CNAME          custom domain, prepared but not active (see the runbook)
 docs/deploy-runbook.md  how this is hosted, published and cut over
 scripts/verify-site.sh  publish gate — asserts the HTML renders without JS
+scripts/check-domain.sh  cutover check — DNS, TLS, HTTPS enforcement
 scripts/install-hooks.sh  points git at .githooks (run once per clone)
 .githooks/pre-push    runs the gate before any push that changes the site
 ```
@@ -56,6 +57,19 @@ Pass a URL to check a deployment instead of the working tree:
 ```sh
 ./scripts/verify-site.sh https://mario-69-oiram.github.io/marius-nel/
 ```
+
+## Checking the domain
+
+`verify-site.sh` follows redirects and never looks at DNS, so it cannot tell a
+working cutover from a domain still pointing elsewhere. That half is:
+
+```sh
+./scripts/check-domain.sh
+```
+
+Safe to run any time, no credentials needed. Today it reports `NOT CUT OVER`,
+which is correct — `www.marius-nel.com` is still served by Notion and the switch
+is the user's call. See the runbook.
 
 ## Deployment
 

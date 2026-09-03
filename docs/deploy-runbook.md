@@ -3,10 +3,13 @@
 Hosting, publishing and the domain cutover. Written for the repository owner;
 the steps marked **owner-only** cannot be done from a checkout.
 
-Verified 2026-09-03, and re-verified twice against the live staging URL later
+Verified 2026-09-03 and re-verified against the live staging URL several times
 the same day — `./scripts/verify-site.sh` PASS on each, 780 no-JS words, all
-assets reachable, `main` in sync with `origin/main`. Nothing has regressed and
-nothing in the tree has changed since the site went up.
+assets reachable, `main` in sync with `origin/main`. Nothing has regressed.
+
+`./scripts/check-domain.sh` was added on the last of those passes to cover the
+half of step 2 that markup checks cannot reach — DNS, TLS and HTTPS
+enforcement. See "Verifying the cutover" below.
 
 **Current state: the site is live on the staging URL.** Pages is enabled and
 serving <https://mario-69-oiram.github.io/marius-nel/>. The only step left is
@@ -157,8 +160,9 @@ DNS is at GoDaddy. Order of operations:
    It will not start until DNS resolves to GitHub.
 5. Once the certificate is issued, tick **Enforce HTTPS**. Doing this before the
    certificate exists makes the site unreachable, so wait for the green state.
-6. Verify:
+6. Verify — **domain first, then content**:
    ```sh
+   ./scripts/check-domain.sh          # DNS, TLS, HTTPS enforcement
    ./scripts/verify-site.sh https://www.marius-nel.com/
    ```
 
@@ -170,6 +174,61 @@ it should follow later, it needs GitHub's four A records
 serves the content throughout — nothing is deleted at the Notion end by any of
 this — so rollback is a DNS change only, and it takes effect within the TTL set
 in step 1.
+
+## Verifying the cutover
+
+`verify-site.sh` answers "is the HTML right?". It follows redirects and does not
+look at DNS, so on its own it cannot tell a working cutover from a domain that
+still points somewhere else. `check-domain.sh` covers that other half:
+
+```sh
+./scripts/check-domain.sh                  # defaults to www.marius-nel.com
+```
+
+It is safe to run at any time and needs no credentials. Three outcomes:
+
+| Verdict | Meaning | Exit |
+| --- | --- | --- |
+| `NOT CUT OVER` | `www` still CNAMEs to Notion — **the expected state today** | 0 |
+| `CUT OVER — PASS` | points at Pages, TLS valid, HTTPS enforced, canonical matches | 0 |
+| `CUT OVER — INCOMPLETE` | points at Pages but something is wrong, listed per line | 1 |
+
+Run today it reports the pre-cutover state, which is also how the rollback
+values in the table above stay honest:
+
+```
+$ ./scripts/check-domain.sh
+Checking www.marius-nel.com
+  dns          CNAME -> external.notion.site
+  serving      Notion — the cutover has not happened
+
+NOT CUT OVER
+```
+
+The checks it makes that nothing else does:
+
+- **DNS type and target.** A CNAME to `mario-69-oiram.github.io` is the only
+  correct answer; an A record here means the GoDaddy record was replaced with
+  the wrong type, which fails in confusing ways later.
+- **TLS actually issued.** Step 2.4 waits on Let's Encrypt. This reports the
+  certificate's issuer and expiry rather than leaving you to read the Pages UI.
+- **HTTPS enforced.** Plain `http://` must 301 to `https://`. If it answers 200,
+  "Enforce HTTPS" (step 2.5) has not been ticked and the script says so.
+- **No redirect off the host, and canonical matches.** Both catch the case where
+  the domain resolves to GitHub but the site being served is not this one — the
+  failure that looks fine in a browser and quietly tells search engines to keep
+  indexing the old site.
+
+The post-cutover paths were exercised before the cutover by pointing the script
+at `pages.github.com` and `blog.github.com` — two real Pages custom domains, one
+healthy and one that redirects away — which returned `CUT OVER — PASS` and
+`CUT OVER — INCOMPLETE` respectively. So the green path is known to be reachable
+and is not just an untested branch waiting for the day it matters.
+
+One consequence of the cutover worth remembering: once Pages has a custom
+domain, the staging URL 301s to it, so `verify-site.sh` against
+`mario-69-oiram.github.io/marius-nel/` will from then on be measuring the live
+site, not staging.
 
 ## Step 3 — publishing after cutover
 
