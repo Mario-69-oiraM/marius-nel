@@ -126,23 +126,67 @@ Copy was tightened but no claim was changed. Specifically:
 Nothing was invented. Every number, employer and narrative on the new site comes
 from the Notion source.
 
-## Not done — needs a decision
+## The domain is frozen, by instruction
 
-The site **is** live, on the staging URL only:
-<https://mario-69-oiram.github.io/marius-nel/>. Pages is enabled and the
-repository is public.
+On 3 September 2026 the user's instruction on NEXAA-45 was:
 
-What is still outstanding:
+> The domain name is not moving now first build the site before we repoint the
+> DNS entry
 
-- The custom domain has **not** been claimed — `www.marius-nel.com` still
-  resolves to Notion, and the Notion page is still what real visitors see.
-  Cutover takes the live domain off Notion, so it needs the user's explicit
-  approval.
+So the cutover is off the table until the built site has been reviewed and
+approved. `www.marius-nel.com` stays on Notion — re-checked against 1.1.1.1 the
+same day, still `CNAME external.notion.site`, and nothing in this repo touches
+DNS. Real visitors continue to see the Notion page, unchanged.
 
-Publishing and cutover are tracked on **NEXAA-48**, not here; the README carries
-the current procedure. Until the cutover lands, the absolute `og:`/canonical
-URLs point at a domain the site does not yet serve from — expected, and correct
-the moment the domain is cut over.
+Publishing and cutover stay parked on **NEXAA-48**. Until the cutover lands, the
+absolute `og:`/canonical URLs point at a domain the site does not yet serve
+from — expected, and correct the moment the domain is cut over.
+
+## Design QA of the built site — 3 September 2026
+
+Ran against the live staging build, not the working tree.
+
+| Check | Result |
+|---|---|
+| `https://mario-69-oiram.github.io/marius-nel/` | HTTP 200 |
+| `verify-site.sh` | PASS — title, description, 780 words without JavaScript, all assets reachable |
+| Horizontal overflow at 390 px | None. `documentElement.scrollWidth` = 390, viewport = 390 |
+| Elements breaching the viewport | One — `a.skip-link` at `left: -9999px`, which is the intended off-screen pattern |
+
+A note for anyone re-running this: screenshotting the page with headless
+Chrome's `--window-size=390,…` produces a page that *looks* horizontally
+clipped. It is an artefact — headless does not apply the mobile viewport meta,
+so it lays out wide and crops. Measure `scrollWidth` from a same-origin iframe
+sized to 390 px instead of trusting the image.
+
+## Open design decisions — these need the user, not more building
+
+None of these block looking at the site. All three change what it claims, so I
+am not making them unilaterally.
+
+1. **The career timeline carries no dates at all.** Nineteen roles, no years,
+   no "present". A reader cannot tell whether this is a ten-year career or a
+   thirty-year one, or which role is current — and recency and tenure are the
+   first two things anyone scanning a career page looks for. The Notion source
+   did not carry dates either, so adding them means sourcing them, not
+   inferring them.
+2. **NAB appears three times, with "Service Delivery Manager" repeated.** In
+   the Australia column it reads Service Delivery Manager → Integration
+   Delivery Manager → Service Delivery Manager, all NAB. If that is a real
+   progression it needs distinguishing; if it is a duplicate from the Notion
+   source it should be collapsed. Right now it reads as a rendering bug.
+3. **Decipha (Melbourne, 2014–2016) is on the résumé and missing here.** Mike
+   flagged it in `docs/content-nexaa-47.md` — the $25M line-of-business role
+   and the first team scaled from five.
+
+Items 2 and 3 are Mike's, from `docs/content-nexaa-47.md` § Career; item 1 is
+mine. They are recorded together because they are one conversation with Marius,
+not three.
+
+Separately, the rewritten copy in `docs/content-nexaa-47.md` is still **not
+applied to this page**. It proposes collapsing Career Highlights, Skills and
+Technical Experience into two sections plus one line. That is a content
+decision above my line.
 
 The rewritten copy in `docs/content-nexaa-47.md` (Mike, Growth & Content) is
 **not applied to this page**. It proposes collapsing Career Highlights, Skills
