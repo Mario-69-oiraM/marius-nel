@@ -5,6 +5,11 @@ the steps marked **owner-only** cannot be done from a checkout.
 
 Verified 2026-09-03.
 
+**Current state: the site is live on the staging URL.** Pages is enabled and
+serving <https://mario-69-oiram.github.io/marius-nel/>. The only step left is
+the domain cutover in step 2, which waits on the user's explicit go. The live
+domain `www.marius-nel.com` is still served by Notion and is untouched.
+
 ## Deployment method: branch deploy, not Actions
 
 **Use Pages "Deploy from a branch" (`main` / `/ (root)`). Do not use
@@ -43,32 +48,29 @@ no build step, so there is nothing for a workflow to do. `.nojekyll` at the repo
 root makes Pages serve the files verbatim. After the one-time enable, **every
 push to `main` republishes the site** — that is the whole pipeline.
 
-## Blocker: the repository is private
+## Step 0 — repository visibility — DONE
 
-`GET /repos/Mario-69-oiraM/marius-nel` reports `"private": true`. GitHub Pages
-on a private repository requires a paid plan (Pro/Team/Enterprise). On the Free
-plan, Pages only serves public repositories.
+This was previously a blocker: Pages on a private repository requires a paid
+plan, and the repo was private. It has since been made public, so Pages serves
+it on the Free plan.
 
-So before anything else, one of:
+Confirmed 2026-09-03 with an unauthenticated call (no token, so it reflects what
+the public internet sees):
 
-- **Make the repository public** — Settings → General → Danger Zone → Change
-  visibility. This publishes the source, which is a public-facing change and
-  needs explicit approval first. The repo holds only the site's own content —
-  no credentials, no private data — so there is nothing sensitive in it.
-- **Confirm the account is already on a paid plan**, in which case leave it
-  private and skip straight to step 1.
+```
+GET https://api.github.com/repos/Mario-69-oiraM/marius-nel  → 200
+  "private": false, "visibility": "public", "has_pages": true
+```
 
-## Step 1 — enable Pages (owner-only, one time)
+The repository holds only the site's own content — no credentials, no private
+data — so nothing sensitive was exposed by this.
 
-Settings → Pages → Build and deployment:
+## Step 1 — enable Pages (owner-only, one time) — DONE
 
-- Source: **Deploy from a branch**
-- Branch: **`main`**, folder **`/ (root)`**
-- Save
+Done via Settings → Pages → Build and deployment (Source: **Deploy from a
+branch**, branch **`main`**, folder **`/ (root)`**, custom domain left empty).
 
-**Leave "Custom domain" empty at this step.** See the sequencing note below.
-
-After about a minute the staging URL is live:
+**The staging URL is live:**
 
 ```
 https://mario-69-oiram.github.io/marius-nel/
@@ -79,11 +81,31 @@ asset paths, so it renders correctly under the `/marius-nel/` subpath. Only the
 absolute `canonical`/`og:` URLs point at `www.marius-nel.com`; those become
 correct at cutover and are harmless in the meantime.
 
-Verify it:
+Verified against the live URL on 2026-09-03, serving commit `8ea2df4`:
 
 ```sh
-./scripts/verify-site.sh https://mario-69-oiram.github.io/marius-nel/
+$ ./scripts/verify-site.sh https://mario-69-oiram.github.io/marius-nel/
+  title        Marius Nel — Software Engineering Leader
+  description  Marius Nel — engineering leader across South Africa, Australia and the...
+  words no-JS  780
+  assets       all reachable
+PASS
 ```
+
+That 780-word no-JS figure is the acceptance bar for this work: the gate reads
+raw bytes without executing any JavaScript, so it is measuring what a crawler or
+link-preview bot actually receives. The equivalent number for the current Notion
+site is 15 words with no canonical link.
+
+Also checked on the live URL, all green:
+
+| Check | Result |
+| --- | --- |
+| TLS certificate | valid (`ssl_verify_result=0`) on the `github.io` domain |
+| `/` | 200, no redirect (custom domain correctly still unset) |
+| `/no-such-page` | 404, serves `404.html` |
+| `/assets/img/og-card.jpg` | 200, `image/jpeg`, 87 KB — a real card, not a placeholder |
+| `/robots.txt`, `/sitemap.xml`, `/.nojekyll` | 200 |
 
 ## Sequencing: do not set the custom domain early
 

@@ -59,28 +59,24 @@ Pass a URL to check a deployment instead of the working tree:
 
 ## Deployment
 
-Pages is **not enabled on this repository yet**, so the site is committed to
-`main` but published at no URL. Enabling it is a repository-settings change that
-only the owner can make in the web UI — our PAT gets 403 on the Pages and
-Actions REST APIs, so it cannot be scripted.
+**Live on the staging URL:** <https://mario-69-oiram.github.io/marius-nel/>
 
 The method is **Pages "Deploy from a branch"** (`main` / `/ (root)`), not
-Pages-via-Actions, for that same reason. Once it is on, publishing is just
-`git push` to `main`; `.nojekyll` makes Pages serve the files verbatim.
+Pages-via-Actions — our PAT gets 403 on the Pages and Actions REST APIs, so a
+workflow-based deploy could not be created or debugged from here. Publishing is
+just `git push` to `main`; `.nojekyll` makes Pages serve the files verbatim.
 
 There is also no GitHub Actions CI here, and cannot be with the current
 credential — the PAT has no `workflow` scope, so the remote rejects the push of
 a workflow file outright. The gate runs as a pre-push hook instead.
 
-Two things gate going live, both owner decisions:
+One thing is left, and it is the user's decision, not an engineering step:
 
-1. The repository is **private**, and Pages on a private repo needs a paid plan.
-   On the Free plan it has to be made public first.
-2. The domain cutover takes `www.marius-nel.com` off Notion, so it happens only
-   on the user's explicit approval. `deploy/CNAME` is prepared for it and is
-   parked outside the repository root on purpose — a custom domain makes Pages
-   redirect the `*.github.io` staging URL, which would break the preview before
-   anyone has reviewed it.
+- The domain cutover takes `www.marius-nel.com` off Notion, so it happens only
+  on the user's explicit approval. `deploy/CNAME` is prepared for it and is
+  parked outside the repository root on purpose — a custom domain makes Pages
+  redirect the `*.github.io` staging URL, which would break the preview before
+  anyone has reviewed it.
 
 Full steps, the recorded pre-cutover DNS, and the rollback are in
 [`docs/deploy-runbook.md`](docs/deploy-runbook.md).

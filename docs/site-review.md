@@ -128,20 +128,21 @@ from the Notion source.
 
 ## Not done — needs a decision
 
-**Nothing here is live.** The site is committed to `main` and nothing more.
+The site **is** live, on the staging URL only:
+<https://mario-69-oiram.github.io/marius-nel/>. Pages is enabled and the
+repository is public.
+
+What is still outstanding:
 
 - The custom domain has **not** been claimed — `www.marius-nel.com` still
-  resolves to Notion. Cutover takes the live domain off Notion, so it needs the
-  user's explicit approval.
-- GitHub Pages is not enabled. The repository is **private**, and Pages on a
-  private repository requires a paid GitHub plan; on the free plan the
-  repository has to be made public first.
+  resolves to Notion, and the Notion page is still what real visitors see.
+  Cutover takes the live domain off Notion, so it needs the user's explicit
+  approval.
 
-Both are repository-settings changes that cannot be made from a checkout.
 Publishing and cutover are tracked on **NEXAA-48**, not here; the README carries
-the current procedure. Until that lands, the absolute `og:`/canonical URLs point
-at a domain the site does not yet serve from — expected, and correct the moment
-the domain is cut over.
+the current procedure. Until the cutover lands, the absolute `og:`/canonical
+URLs point at a domain the site does not yet serve from — expected, and correct
+the moment the domain is cut over.
 
 The rewritten copy in `docs/content-nexaa-47.md` (Mike, Growth & Content) is
 **not applied to this page**. It proposes collapsing Career Highlights, Skills
