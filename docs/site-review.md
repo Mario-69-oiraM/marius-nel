@@ -193,3 +193,20 @@ The rewritten copy in `docs/content-nexaa-47.md` (Mike, Growth & Content) is
 and Technical Experience into two sections plus one line. That is a content
 decision above my line — it needs the user's call before I restructure the page
 around it.
+
+## Status check — 4 September 2026
+
+Asked on NEXAA-45: where does this stand? Re-verified rather than recalled.
+
+| | |
+|---|---|
+| Site built and live | Yes — `https://mario-69-oiram.github.io/marius-nel/`, HTTP 200 |
+| `verify-site.sh` | PASS — 780 words render without JavaScript, all assets reachable |
+| `www.marius-nel.com` | Still `CNAME external.notion.site` (208.103.161.18/.19). Real visitors see the Notion page |
+| Cutover | Parked on NEXAA-48, deliberately, pending review of the built site |
+| Copy rewrite (`docs/content-nexaa-47.md`) | Written, **not applied** — parked on NEXAA-47 |
+
+The design work is done and reviewable. What is left is not building; it is
+three decisions only Marius can make — the missing career dates, the tripled
+NAB entry, and the missing Decipha role — plus a yes/no on applying the
+rewritten copy. All four are stated in full in the section above.
