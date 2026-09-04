@@ -4,8 +4,10 @@ Hosting, publishing and the domain cutover. Written for the repository owner;
 the steps marked **owner-only** cannot be done from a checkout.
 
 Verified 2026-09-03 and re-verified against the live staging URL several times
-the same day — `./scripts/verify-site.sh` PASS on each, 780 no-JS words, all
-assets reachable, `main` in sync with `origin/main`. Nothing has regressed.
+the same day, and again on 2026-09-04 — `./scripts/verify-site.sh` PASS on each,
+780 no-JS words, all assets reachable. `./scripts/check-domain.sh` on 2026-09-04
+still reports `CNAME -> external.notion.site` and Notion serving, which is the
+expected pre-cutover state. Nothing has regressed.
 
 `./scripts/check-domain.sh` was added on the last of those passes to cover the
 half of step 2 that markup checks cannot reach — DNS, TLS and HTTPS
