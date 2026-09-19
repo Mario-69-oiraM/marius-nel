@@ -156,6 +156,14 @@ So the custom domain goes on at cutover, together with DNS — not before.
 
 This takes the live domain off Notion. Do it only on the user's explicit go.
 
+**Two gates, not one (added 2026-09-19).** The go on the NEXAA-55 cutover card
+is necessary but not sufficient. Marius flagged that the new site has no Books
+page, and the Books page is where readers of the book land — so it cannot stay
+the one Notion-served page after the domain moves. `/books/` is being built on
+NEXAA-114; whether the cutover waits for it to reach staging is a question on
+Marius's card on NEXAA-45. Before acting on an accepted cutover card, check
+that NEXAA-45 has answered — an accept on one card does not resolve the other.
+
 **Pre-cutover state, recorded 2026-09-03 for rollback:**
 
 | Record | Current value |
@@ -216,6 +224,10 @@ login). So:
   own, and the front page links straight to the Books page.
 - The Books section on the front page links to the `notion.site` address, not
   the custom domain, so it survives the cutover unchanged.
+- Both of the above are a stopgap. NEXAA-114 builds `/books/` on this site
+  (phase 1: the index, with the front page and `404.html` repointed at it;
+  phase 2: sub-pages and hosted attachments), after which the forwarder only
+  has to cover paths that have not been migrated yet.
 
 If the custom domain is later removed from Notion's Site settings, nothing
 here changes: the `notion.site` address is the one that was always there.
