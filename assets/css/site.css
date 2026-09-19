@@ -310,6 +310,23 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .book p { font-size: .95rem; color: var(--text-muted); }
 .book .btn { align-self: flex-start; margin-top: auto; }
 
+/* /books/ index — one row per Notion sub-page, readable as a plain list. */
+.books-hero { padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.book-list { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: .85rem; }
+.book-entry {
+  display: grid; gap: .2rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.25rem 1.5rem; box-shadow: var(--shadow-sm);
+}
+.book-entry .book-num { margin: 0; font-size: .72rem; text-transform: uppercase; letter-spacing: .11em; color: var(--text-faint); }
+.book-entry h3 { font-size: 1.2rem; margin: 0; }
+.book-entry h3 a { color: var(--text); text-decoration: none; }
+.book-entry h3 a:hover { color: var(--accent-text); text-decoration: underline; }
+.book-entry .book-sub { font-family: var(--serif); font-style: italic; color: var(--text-muted); margin: 0; }
+.book-entry p { font-size: .95rem; color: var(--text-muted); margin: .35rem 0 0; }
+.book-entry .book-links { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: .9rem; }
+.book-note { margin: 1.6rem 0 0; font-size: .9rem; color: var(--text-faint); }
+
 /* ---------- contact ---------- */
 
 .contact-grid {
@@ -367,8 +384,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 }
 
 @media print {
-  .site-header, .cta-row, .book .btn, .contact-card svg { display: none; }
+  .site-header, .cta-row, .book .btn, .book-links, .contact-card svg { display: none; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .section, .section-alt { border: 0; background: #fff; padding: 1rem 0; }
-  .card, .era, .skill, .book, .contact-card { break-inside: avoid; box-shadow: none; }
+  .card, .era, .skill, .book, .book-entry, .contact-card { break-inside: avoid; box-shadow: none; }
 }

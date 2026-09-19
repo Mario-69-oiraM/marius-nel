@@ -217,17 +217,19 @@ Notion keeps serving them at the workspace's own hostname,
 public page data on 19 September; the Books page is public, reader role, no
 login). So:
 
-- `404.html` forwards any path that ends in a 32-hex Notion id to
+- The Books page itself now lives on this site at `/books/` (NEXAA-114,
+  phase 1). `404.html` forwards the old `Books-3c5a3189063f8018b995f3a4f57f4dca`
+  path there, and any other path ending in a 32-hex Notion id to
   `https://nel-id-au.notion.site/<same path>`. This is a client-side redirect
   — Pages cannot do server-side ones — so it works for people, not crawlers.
   That is acceptable: those pages were never indexed under a title of their
-  own, and the front page links straight to the Books page.
-- The Books section on the front page links to the `notion.site` address, not
-  the custom domain, so it survives the cutover unchanged.
-- Both of the above are a stopgap. NEXAA-114 builds `/books/` on this site
-  (phase 1: the index, with the front page and `404.html` repointed at it;
-  phase 2: sub-pages and hosted attachments), after which the forwarder only
-  has to cover paths that have not been migrated yet.
+  own, and the front page links straight to `/books/`.
+- Each entry on `/books/` still opens its Notion sub-page at the `notion.site`
+  address, so nothing is lost at cutover. Phase 2 (NEXAA-114) ports those
+  sub-pages and their attachments into the repo under `/books/<slug>/` and
+  extends the `404.html` forwarding table, after which the forwarder only has
+  to cover paths that have not been migrated yet. Phase 2 is gated on Marius's
+  answer on NEXAA-45.
 
 If the custom domain is later removed from Notion's Site settings, nothing
 here changes: the `notion.site` address is the one that was always there.

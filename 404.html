@@ -11,13 +11,18 @@
 (function(){try{var t=localStorage.getItem("mn-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);}catch(e){}})();
 </script>
 <!-- Sub-pages of the old Notion site (Books, Book 1-6, Lunch & Learn, Skills)
-     were shared as www.marius-nel.com/<Title>-<32 hex id>. Notion keeps serving
-     them at its own hostname after the domain moves, so forward those paths
-     there rather than dead-ending links already in people's inboxes. -->
+     were shared as www.marius-nel.com/<Title>-<32 hex id>. The Books page now
+     lives on this site at /books/ (NEXAA-114), so its old id forwards there —
+     relative to wherever this site is mounted, because the staging URL sits
+     under /marius-nel/. Every other id keeps forwarding to Notion, which still
+     serves those pages at its own hostname, until phase 2 ports them. -->
 <script>
 (function(){
-  var m = /^\/[A-Za-z0-9%._-]*[0-9a-f]{32}\/?$/.exec(location.pathname);
-  if (m) location.replace("https://nel-id-au.notion.site" + location.pathname + location.search);
+  var m = /^(.*\/)([A-Za-z0-9%._-]*([0-9a-f]{32}))\/?$/.exec(location.pathname);
+  if (!m) return;
+  var moved = { "3c5a3189063f8018b995f3a4f57f4dca": "books/" };
+  if (moved[m[3]]) location.replace(m[1] + moved[m[3]]);
+  else location.replace("https://nel-id-au.notion.site/" + m[2] + location.search);
 })();
 </script>
 <style>
@@ -31,7 +36,7 @@
     <p class="eyebrow">Error 404</p>
     <h1>Page not found</h1>
     <p class="lede" style="margin-inline:auto">That page doesn’t exist — or it moved when the site did.</p>
-    <p class="lede" style="margin-inline:auto">Looking for the books or the Lunch &amp; Learn material? They are at <a href="https://nel-id-au.notion.site/Books-3c5a3189063f8018b995f3a4f57f4dca">nel-id-au.notion.site</a>.</p>
+    <p class="lede" style="margin-inline:auto">Looking for the books or the Lunch &amp; Learn material? They are on the <a href="books/">Books page</a>.</p>
     <p><a class="btn btn-primary" href="./">Back to the homepage</a></p>
   </div>
 </main>
