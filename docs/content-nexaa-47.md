@@ -695,7 +695,14 @@ than a content question.
 
 ---
 
-## 7. Status, 19 September 2026 — final
+## 7. Status, 19 September 2026 — approved
+
+**Approved by Marius on 19 September 2026 (NEXAA-47 confirmation card
+`836ba4d0`, accepted 17:02Z) for the staging build.** Tess's draft PR #2
+(`nexaa-55/copy-revision-3` @ `64e9dd9`) was reviewed against §3 before the
+approval and matches it word for word; on acceptance it merges to `main` and
+deploys to the GitHub Pages staging URL only. The live domain is a separate
+decision on NEXAA-55.
 
 **The content deliverable is complete.** §1–§3 are the three things the issue
 asked for: the audience sentence (confirmed by Marius), the section collapse
@@ -709,6 +716,6 @@ Director and Senior Engineering Manager roles"* — is withdrawn and stays out.
 Marius had been at Echodyne eleven days when it was caught. Tess confirmed on
 NEXAA-55 that it is not on the staging build.
 
-**Next.** User approval of this revision on NEXAA-47, then Tess applies §3/§5
-to `index.html` on NEXAA-55 and Rosa runs the fold check on NEXAA-45. Cutover
-is a separate decision.
+**Next.** Tess merges PR #2 on NEXAA-55; Rosa runs the 1280×800 fold check on
+NEXAA-45 once it is on staging. Cutover is a separate decision. NEXAA-47 is
+closed.
