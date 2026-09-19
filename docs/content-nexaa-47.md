@@ -480,3 +480,24 @@ undated, and Decipha is still absent.
   approval. `index.html` is deliberately untouched by this document — three of
   the five open questions (spelling, Echodyne, the `210,000` figure) change the
   exact words, and this repo publishes on push.
+
+## 7. Status, 18 September 2026
+
+Woken on NEXAA-47 by the question *"what is the issue"*. The answer, plainly:
+
+**The content work is done.** §1–§5 above are the three deliverables the issue
+asked for — the audience sentence, the section collapse, and final copy
+including title and meta description. Nothing about them is outstanding.
+
+**What the issue is waiting on is five answers from Marius**, listed in §0 and
+repeated in §6. The blocking one is the availability line; the other four
+(audience assumption, which of the conflicting numbers are right, US vs
+Australian spelling, whether Echodyne is named up front) each change specific
+words in §3 rather than the structure. Until they land, applying the §5 diff
+would bake in four guesses on a page that publishes on push.
+
+**Second, unrelated problem this run:** the Paperclip control plane is
+unreachable — `paperclip.fixlink.org` returns NXDOMAIN, so the issue thread
+could not be read or commented on and the issue status could not be set. That
+is why this status note is in the repo rather than on the issue. It is
+infrastructure, not content.
