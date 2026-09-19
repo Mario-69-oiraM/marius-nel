@@ -1,87 +1,135 @@
 # marius-nel.com — audience, call to action, and final copy
 
-NEXAA-47 · content deliverable · 3 September 2026 · Mike, Growth & Content
+NEXAA-47 · content deliverable · drafted 3 September 2026 · **materially revised
+19 September 2026** · Mike, Growth & Content
 
 Source material read through the Notion connector: the published page
-(`192ac30a…`), the `Site` index, the full `Skills` page (30 tiles), and
-`Marius Nel Résumé Master` (last edited 12 July 2026). Nothing here is
-published. Nothing goes live without the user's explicit approval.
+(`192ac30a…`), the `Site` index, the `Site / Books` tree, the full `Skills`
+page (30 tiles), `Marius Nel Résumé Master`, and the Iterum Works meeting and
+notes databases through 18 September 2026. Nothing here is published. Nothing
+goes live without the user's explicit approval.
 
 ---
 
-## 0. Five questions, answerable in one reply
+## 0. Read this first — the premise changed
 
-The copy in §3 is finished and buildable as written. These four answers change
-specific lines rather than the structure, so the design work on NEXAA-45 does
-not need to wait on them — the build does.
+**Marius started a new job on about 8 September 2026.** He is **Director of
+Software Engineering at Echodyne**, leading the **EchoWare** team. This is not
+an inference; it is in his own words and corroborated four ways:
 
-1. **Is the reader a hiring manager, or a consulting client?** I have written
-   for a hiring manager (reasoning in §1). If it is a client, the CTA is
-   unchanged and two lines swap.
-2. **Availability line — publish it, and in these words?**
-   *"Open to Director and Senior Engineering Manager roles — Seattle or
-   remote."* This is the one genuinely new claim on the page and the only line
-   I will not build without a yes.
-3. **~~Which of the five conflicting numbers are right?~~ Now one, not five.**
-   On 18 September I checked every figure against the résumé corpus in Notion
-   (§4). Four of the five resolve on evidence and need nothing from Marius —
-   in each case the outlier is the *site's own* copy, not the résumé. The one
-   that genuinely needs him is **72 weeks → 3 days or 10 days**, because both
-   are current and they may be two different metrics.
-4. **US or Australian spelling?** §3 is written US-side because the reader in
-   §1 is US-based; the current build is Australian. Trivially reversible.
-5. **Name Echodyne in the title and preview, or not?** I left it out and kept
-   the five strongest names; the build currently includes it. Both versions
-   are written in §3 — pick one.
+| Evidence | Date | What it says |
+|---|---|---|
+| Personal letter, Notes DB | 31 Aug 2026 | *"I am also starting a new role next week at a company called Echodyne."* Also: laid off from Oracle earlier in the year; started a business; self-published a book. |
+| `my intro` bio questionnaire | 10 Sep 2026 | Job Title: **Director of Software Engineering**. Duties: *"Lead the Echoware team."* |
+| 1:1 with Matt, on the **Outlook (Echodyne)** calendar | 17 Sep 2026 | *"Marius is about one week in."* Onboarding, laptop setup, GitLab migration, EchoWare/firmware team split. |
+| Three intro 1:1s titled *"— Marius Nel — Director of Software Engineering"* | 18 Sep 2026 | Title confirmed in the meeting records themselves. |
 
-Nothing here is published, and nothing goes live without the user's explicit
-approval.
+**This invalidates the most consequential part of the 3 September draft, and it
+would have put a false statement on a live page.** That draft was written for a
+job-seeking reader and held one line for Marius's approval:
+
+> ~~Open to Director and Senior Engineering Manager roles — Seattle or remote.~~
+
+**That line is withdrawn. It must not be built, and it is no longer a question
+for anyone to answer.** Publishing it would tell his new employer and his new
+team, in week two, that he is looking to leave. It is the single most important
+correction in this document.
+
+Three further things the 3 September draft did not know:
+
+1. **Echodyne is his employer, not a former one.** The old §3 argued for
+   *dropping* Echodyne from the link preview in favour of NAB. That reasoning is
+   now backwards — see §3.
+2. **He is a published author, and the books are already on this site.**
+   `Site / Books` holds a six-book series plus a 13-session *Lunch & Learn*
+   curriculum. *From Code to Team — An Honest Playbook for New Engineering
+   Leaders* is on Amazon (`B0HG67BG7Z`) and is now in a second edition. The
+   front page does not mention any of it. This is the largest missed asset on
+   the site and it changes what the page is for — see §1 and §3.
+3. **He started a business** (Iterum Works) and runs a podcast season off the
+   book. Neither appears on the page. I have not proposed copy for either —
+   see the open questions.
+
+I did not go looking for this. It surfaced while checking the one remaining
+number conflict from the last run. The lesson is the same one §4 already drew
+about the metrics: **the site is the stale source.** It was stale about the
+numbers; it is now eleven days stale about his job and about a book he wrote.
+
+### What is still open, after this revision
+
+Down from five, then four, now **three** — and they are different questions
+than before:
+
+1. **Is the audience in §1 right?** I have rewritten it for a reader who has
+   just met Marius or just read him, not for a recruiter. Reasoning in §1. This
+   is the one that changes the page.
+2. **Name Echodyne on the page, and in the link preview?** It is a defense
+   contractor under ITAR, and his manager noted in the 17 September 1:1 that the
+   company is tightening its security and disclosure posture. The site already
+   names it, so this is a question about whether it *should*, not a new
+   exposure. Both versions written in §3.
+3. **Go-to-market: 72 weeks → 3 days or 10 days?** Unchanged from the last run.
+   §4 has the case for each and the likely reconciliation. §3 uses the
+   conservative figure and is correct as written if he confirms it.
+
+**US vs Australian spelling is now resolved** and is no longer a question —
+see §4.
 
 ---
 
 ## 1. The sentence
 
-> **A hiring manager or recruiter who already has Marius's name — from an
-> application, a referral, or LinkedIn — lands here to decide in about ninety
-> seconds whether he is worth a conversation, and leaves having booked one.**
+The 3 September sentence named a hiring manager deciding whether Marius was
+worth interviewing. He is not a candidate any more. Replacing it:
 
-Two things follow from it, and they are the whole brief.
+> **Someone who has just met Marius, or just read something he wrote, lands
+> here to work out who he is — and leaves with the book, or with his email.**
 
-**Nobody arrives by search.** They arrive by name. So the page is not a
-discovery page, it is a *verification* page. Its job is to confirm and
-de-risk quickly, not to introduce. That is why the title and meta description
-matter more than any body copy: they are what the link preview shows in the
-LinkedIn message, the Slack DM, or the ATS note where the visit actually
-starts.
+Three things follow, and they are the brief.
 
-**There is one action, and it is the calendar.** Email and LinkedIn are
-fallbacks, not equals. Today the page offers Calendar and Contact as equal
-weight in the sidebar and buries them above the fold in a narrow column; the
-scheduling link is the only path that ends in a meeting on its own.
+**Nobody arrives by search. They arrive by name — and now, increasingly, by
+book.** This was already a verification page rather than a discovery page. What
+has changed is who is verifying: a new colleague at Echodyne looking him up, an
+engineer who sat through a Lunch & Learn, someone who bought *From Code to
+Team* and followed the link. The `Site / Books` page opens with *"You can
+download additional content for my books here"* — so book readers are already
+arriving, and the front page gives them nothing and points at nothing.
 
-### The assumption behind this, which Marius should confirm
+**The page finally has something to give.** This is the real unlock. A profile
+page whose only action is "book a call" is asking the reader for something. A
+page that hands over a book and thirteen free session scripts is giving the
+reader something, which is both better content strategy and a much better fit
+for what NEXAA-46 settled: credibility and contact, not a funnel.
 
-The Oracle role ran to 06/2026. There are four résumés tailored to named
-requisitions dated July 2026 (Nordstrom, UKG, McKinstry). I have read that as
-*actively looking for a senior engineering leadership role, US-based*, and
-written the copy for a hiring reader.
+**The calendar should stop being the primary action.** In the old draft the
+scheduling link was the one path that ended in a meeting, and that was right for
+a job search. A sitting Director with a public "book 30 minutes" button is
+inviting cold meetings he now has no room for. Recommendation: the book is the
+primary action, email is second, and the scheduling link moves down into the
+contact section rather than the hero. His call — flag it if he wants the
+calendar kept up top.
 
-If the primary reader is instead a **prospective consulting client**, the
-sentence and the CTA do not change — it is still "book a call" — but two
-things do: the outcome cards should lead with the 2023–24 security consulting
-engagement rather than the Amazon provisioning work, and the availability line
-in §3 changes wording. One swap, not a rewrite. Flag it and I will do it.
+### What does *not* change
+
+NEXAA-46's settlement holds exactly as written: this is Marius's personal
+professional profile, for credibility and contact. Nothing here turns it into a
+product page or a funnel, and the books are presented as his work rather than as
+something being sold — Book 1 links to Amazon because that is where it is, and
+everything else on the site is free.
 
 ---
 
-## 2. Collapsing the three sections
+## 2. Collapsing the three overlapping sections
+
+*Unchanged from 3 September except for the addition at the end. The analysis
+below was verified against `index.html` and still holds.*
 
 ### What is wrong
 
 "Career Highlights", "Skills" and "Technical Experience" all answer one
 question — *is he any good?* — three times, in three registers, at increasing
-length and decreasing usefulness. The reader gets the answer from the first
-one and then has to wade through two more.
+length and decreasing usefulness. The reader gets the answer from the first one
+and then has to wade through two more.
 
 It is worse than it looks from the front page. "More skills…" opens onto
 **thirty tiles**, and they are not thirty skills. `Coach`, `Coaching` and
@@ -91,17 +139,18 @@ times. `Collaborate` and `Collaboration` are the same MVP workshop story.
 retellings of the MYOB go-to-market program. `Passion` says he is passionate.
 Meanwhile "Technical Experience" lists roughly sixty technologies including
 IBM Db2, Objective-C and Apache HBase — a junior résumé's inventory, on the
-page of a man who ran a 53-person organisation.
+page of a man who ran a 53-person organization.
 
 ### What replaces them
 
-Three sections become **two**, plus one line.
+Three sections become **two**, plus one line — and one new section is added.
 
 | Today | Becomes | Answers |
 |---|---|---|
 | Career Highlights (5 metric bullets) | **Outcomes** — same five, one sentence each | *What has he produced?* |
-| Skills (3 essays + 30 tiles) | **How I work** — 3 items, ~50 words each | *What is he like to hire?* |
+| Skills (3 essays + 30 tiles) | **How I work** — 3 items, ~50 words each | *What is he like to work with?* |
 | Technical Experience (7 blocks, ~60 items) | **one line inside How I work** | *Is he still technical?* |
+| *(nothing on the front page)* | **Books** — new, see §3 | *What can I take away?* |
 
 The **Career Timeline** stays as its own section and is untouched by this
 collapse. It answers a different question — *where has he been?* — and the
@@ -126,27 +175,27 @@ three-country arc is genuinely unusual. It earns its place.
 - **The positioning quote as written.** "I possess a talent for…" is résumé
   voice — it asserts the thing instead of showing it. Replaced in §3.
 
-Net: the same evidence, roughly 60% less text, and one clear action.
+Net: the same evidence, roughly 60% less text, one clear action, and one
+section that gives the reader something instead of asking for something.
 
-### What gets added — the one real gap
+### What gets added
 
-There is nothing on the page saying **what he wants**. A recruiter reading it
-learns everything about the last twenty years and nothing about the next six
-months. One line fixes that, and it is the highest-value addition on this
-page. Copy is in §3; the wording needs Marius's confirmation before it goes
-anywhere near a build.
+The 3 September draft said the one real gap was a line saying what he wants
+next. That gap closed itself — he got the job. **The gap now is the books**,
+and it is a much bigger one. A six-book series and a thirteen-session
+curriculum are sitting two clicks down on a page nobody reaches, while the
+front page spends 400 words listing database engines. Copy is in §3.
 
 ---
 
 ## 3. Final copy
 
-Ready to build. Where the existing static rebuild (`index.html`) already
-carries a version of a line, this text supersedes it.
+Ready to build, with the three §0 questions marked where they bite. Where the
+existing static rebuild (`index.html`) already carries a version of a line, this
+text supersedes it.
 
-**A note on spelling.** The rebuild normalised to Australian English. Given
-the reader named in §1 is a US hiring manager, I would switch to US spelling
-(`organized`, `recognizing`, `defense`). Marius's call; the copy below is
-written US-side and is trivially reversible.
+**Spelling: US.** Resolved on evidence rather than preference — see §4. The
+current build is Australian and needs normalizing.
 
 ---
 
@@ -156,60 +205,78 @@ written US-side and is trivially reversible.
 Marius Nel — Software Engineering Leader, Seattle
 ```
 
-49 characters. Name first, because that is what the reader searched or
-clicked. Role and city next, because those are the two facts a recruiter
-checks before anything else.
+49 characters. Deliberately *not* "Director of Software Engineering at
+Echodyne": a title is the most expensive thing on the page to keep current, it
+is what every existing link and bookmark shows, and it should survive his next
+job change. The current role belongs in the body, where updating it is cheap.
 
 ### Meta description
 
-```
-Engineering leader, 20+ years across Amazon, AWS, Oracle Health, NAB and
-MYOB. I build teams from scratch and take on the ones that are struggling.
-```
-
-147 characters. Names the employers, because in a link preview the employer
-names do the credibility work faster than any adjective.
-
-**On Echodyne.** The current build names Echodyne in both the hero lede and
-the meta description; I have left it out of both above. That is a deliberate
-call, not an oversight: five employer names is already at the limit of what a
-reader parses in a preview snippet, and Amazon, AWS and Oracle Health are the
-three that do the most work with a US hiring reader. Echodyne stays on the
-page — it is the "defense technology" in the Career lede and keeps its
-timeline entry. If Marius would rather it be named up front, this version
-fits in 152 characters:
+**Version A — names the current employer** (139 characters):
 
 ```
-Engineering leader, 20+ years across Amazon, AWS, Oracle Health, Echodyne and
-MYOB. I build teams from scratch and take on the ones that are struggling.
+Director of Software Engineering at Echodyne. Twenty years building teams at
+Amazon, AWS and Oracle Health. Author of From Code to Team.
 ```
 
-Swapping NAB out rather than adding a sixth name is the trade; NAB is the
-oldest of the six.
+**Version B — employer-free** (147 characters):
+
+```
+Engineering leader in Seattle. Twenty years building teams at Amazon, AWS,
+Oracle Health and MYOB. Author of From Code to Team, a playbook for new leads.
+```
+
+**My recommendation is B, and this reverses what I wrote on 3 September.** Not
+because Echodyne is weak — it is the freshest and most relevant fact on the
+page — but for two reasons that only became visible this week. First, a link
+preview is cached and syndicated; pinning the current employer into it means
+every stale copy misstates where he works the moment that changes. Second,
+Echodyne is a defense contractor under ITAR, and his own manager described the
+company as tightening a historically open disclosure posture. Naming a current
+defense employer in a search snippet is his call and his employer's, not mine.
+Version A is written and ready if he wants it.
+
+Either version is a large improvement on the current line, which is **208
+characters** — it is truncated mid-sentence in every search result and link
+preview today.
+
+**Echodyne still belongs on the page**, prominently, in the hero and at the top
+of the timeline. The question above is only about the link preview.
 
 ### Open Graph
 
 ```
 og:title        Marius Nel — Software Engineering Leader
 og:description  Twenty years and three countries: Amazon, AWS, Oracle Health,
-                MYOB, NAB. Still reviewing pull requests.
+                MYOB. Now leading engineering at a radar company in Seattle.
+                Still reviewing pull requests.
 og:type         profile
 ```
 
-The last line of the description is the differentiator, so it goes in the
-preview. `og:title` and `og:type` in the current build already match this
-exactly — no change needed on either.
+The last line is the differentiator, so it stays in the preview. The middle
+clause is the employer-free phrasing; swap in `Now Director of Software
+Engineering at Echodyne.` if Version A wins above. `og:title` and `og:type` in
+the current build already match — no change needed on either.
 
 **Leave `og:image` alone.** It already points at
 `https://www.marius-nel.com/assets/img/og-card.jpg`, a real 1200×630 card with
-matching `og:image:width`, `og:image:height` and `og:image:alt`. An earlier
-draft of this document pointed it at the portrait JPEG; that would have been a
-regression. The absolute URL is correct and should stay absolute — relative
-`og:image` values are ignored by most crawlers.
+matching `og:image:width`, `og:image:height` and `og:image:alt`. The absolute
+URL is correct and should stay absolute — relative `og:image` values are
+ignored by most crawlers.
 
 The `og:image:alt` currently reads `…Amazon, AWS, Oracle Health, NAB.` It
-should pick up the full employer list from the meta description — **add MYOB**
-— so the alt and the visible copy agree.
+should match the employer list in whichever meta description is chosen.
+
+### Structured data
+
+The JSON-LD block lists `alumniOf` only, and Echodyne is absent from it
+entirely. Two changes:
+
+- Add `"worksFor": {"@type": "Organization", "name": "Echodyne"}` — **only if
+  Version A wins.** It is the same disclosure question.
+- Add `"jobTitle": "Director of Software Engineering"`, replacing the generic
+  `"Software Engineering Leader"`. This is safe either way; it names the role,
+  not the employer.
 
 ---
 
@@ -224,15 +291,22 @@ Marius Nel
 **Role line**
 
 ```
-Software engineering leader · Seattle
+Director of Software Engineering · Seattle
 ```
 
 **Lede**
 
-> Twenty years building software teams across South Africa, Australia and the
-> United States — most recently Oracle Health, and before that Amazon Alexa,
-> AWS S3 and EC2. I build teams from scratch, and I take on the ones that are
+> I lead the EchoWare team at Echodyne, building the software layer across a
+> radar platform. Before this: twenty years of engineering teams across South
+> Africa, Australia and the United States — Oracle Health, Amazon Alexa, AWS S3
+> and EC2. I build teams from scratch, and I take on the ones that are
 > struggling.
+
+*Employer-free variant, if Version B wins the disclosure question and he wants
+it consistent:* replace the first sentence with **"I lead software engineering
+at a radar company in Seattle."** I would not do this — naming the employer in
+the body is normal and low-risk, and the reader who has just met him already
+knows where he works. But the option is here.
 
 **The line that does the work** (set apart, replacing the yellow callout)
 
@@ -240,24 +314,22 @@ Software engineering leader · Seattle
 > way to set the technical bar by proxy.
 
 That sentence is the only thing on this page that a hundred other engineering
-directors could not also write. It is supported throughout the résumé — PR
-review on Oracle's identity paths, debugging authentication incidents with the
-on-call rotation, writing the MYOB prototypes himself — so it is a claim the
-evidence carries.
-
-**Availability line** — *needs Marius's confirmation before build*
-
-> Open to Director and Senior Engineering Manager roles — Seattle or remote.
+directors could not also write. It is supported throughout — PR review on
+Oracle's identity paths, debugging authentication incidents with the on-call
+rotation, writing the MYOB prototypes himself — and the Lunch & Learn script
+for Chapter 1 sets out the exact practice behind it, down to the two hours on
+Wednesday afternoons. It is a claim the evidence carries.
 
 **Call to action**
 
 ```
-[ Book 30 minutes ]   marius@nel.id.au   LinkedIn
+[ Read From Code to Team ]   marius@nel.id.au   LinkedIn
 ```
 
-Primary button, then two text links. Not three equal buttons. "Book 30
-minutes" beats "Book time with me" because it tells the reader the size of the
-commitment, which is the thing that stops people clicking.
+Primary button, then two text links. The scheduling link moves to the contact
+section — see §1.
+
+~~Availability line~~ — **withdrawn, see §0. Do not build.**
 
 ---
 
@@ -340,6 +412,50 @@ How I work
 
 ---
 
+### Section: Books — **new**
+
+**Heading**
+
+```
+Books
+```
+
+**Lede**
+
+> Melbourne, winter of 2005. First week I ever ran a team, and on the Friday I
+> genuinely could not tell you what I had done. I wrote the book I needed that
+> week.
+
+**Book 1**
+
+> **From Code to Team — An Honest Playbook for New Engineering Leaders**
+> The first ninety days of leading people, written for engineers who were good
+> at the old job and have just been handed a different one. Now in its second
+> edition.
+>
+> `[ Read it on Amazon ]`
+
+**Companion material**
+
+> One-pagers, playbooks and the full thirteen-session Lunch & Learn curriculum
+> are free here — the scripts I use to run the material with a room.
+>
+> `[ Companion material ]`
+
+**Build note — this section needs one answer before it ships.** `Site / Books`
+lists six books. Only **Book 1** is verifiably published: it has an Amazon
+listing (`B0HG67BG7Z`) and the Lunch & Learn scripts reference a second
+edition. Books 2 through 6 exist as pages, but I found no evidence of
+publication, so the copy above names Book 1 only and treats the rest as
+companion material. **If Books 2–6 are published, send me the links and I will
+rewrite this as a series.** I will not list a book as available without one.
+
+**Separate defect worth fixing while we are in there:** two different pages are
+both numbered "Book 3" — *Installing the Operating System* and *Your New Lead*.
+Whichever is live, the numbering is wrong in public.
+
+---
+
 ### Section: Career
 
 **Heading**
@@ -353,17 +469,30 @@ Twenty years, three countries
 > Networks, then code, then teams — telco, retail, banking, insurance,
 > hyperscale cloud, health, and defense technology.
 
-Structure and entries as already built, with three corrections:
+Structure and entries as already built, with **five** corrections:
 
-1. **Collapse the duplicate NAB entry.** One line:
+1. **Echodyne is the current role and must lead the section, dated.**
+   `Director of Software Engineering — Echodyne, Seattle · 09/2026 – present`.
+   The build currently has it undated, below Oracle Health, and with the wrong
+   title: **"Director of Software Development"** should be **"Director of
+   Software Engineering"** (confirmed in his own bio questionnaire and in three
+   meeting records). As built it reads as a finished job.
+2. **Oracle Health should carry its dates** (10/2024 – 06/2026) and sit below
+   Echodyne.
+3. **Collapse the duplicate NAB entry.** One line:
    `Service Delivery Manager, then Integration Delivery Manager — NAB`.
-2. **Decipha (Melbourne, 2014–2016), Software Engineering Manager** is on the
+4. **Decipha (Melbourne, 2014–2016), Software Engineering Manager** is on the
    résumé and missing from the timeline. It is the $25M line-of-business role
    and the first time he scaled a team from 5. It should be in the Australia
    section.
-3. **Oracle Health should carry its dates** (10/2024 – 06/2026). It is the
-   most recent role and the one the reader cares most about; it currently sits
-   undated at the bottom of a list.
+5. **The 2026 gap between Oracle and Echodyne is real and currently invisible.**
+   He was laid off in the Oracle Health restructure and spent the year
+   consulting, writing and starting a business. An undated timeline that jumps
+   Oracle → Echodyne hides a gap that a careful reader will notice and wonder
+   about; a dated one that shows what he did with it is stronger than either.
+   **I have not written copy for this** — how he characterizes that year is his
+   to decide, and I am not putting words about a layoff on his page. If he
+   wants a line, I will draft it.
 
 ---
 
@@ -377,16 +506,19 @@ Get in touch
 
 **Lede**
 
-> The calendar is the fastest route — pick a slot and it is booked. Email if
-> that suits you better; I answer within a day.
+> Email is the surest route — I answer within a day. If a conversation is
+> easier, the calendar is open.
 
 **Cards**
 
 ```
-Book 30 minutes    calendar.notion.so/meet/mariusnel/meet
 Email              marius@nel.id.au
 LinkedIn           in/marius--nel
+Book 30 minutes    calendar.notion.so/meet/mariusnel/meet
 ```
+
+Email first, calendar last — the reverse of the 3 September draft, for the
+reason in §1.
 
 ---
 
@@ -400,19 +532,14 @@ Keep the sign-off quote, set as type rather than trapped in the cover JPEG:
 >
 > — Marius
 
-It is short, it is his, and it is the only piece of voice on the page that is
-not about work delivered.
-
 ---
 
-## 4. Numbers that disagree with each other — resolved, except one
+## 4. Numbers that disagree with each other — four of five resolved
 
-**Updated 18 September 2026.** The first version of this section listed five
-conflicts and handed all five to Marius. That was more caution than the
-evidence warranted. I have now checked each figure against the full résumé
-corpus in Notion — roughly twenty tailored résumés, cover letters and dictated
-notes spanning March to August 2026 — and **four of the five resolve on source
-weight alone.**
+**Checked 18 September 2026** against the full résumé corpus in Notion —
+roughly twenty tailored résumés, cover letters and dictated notes spanning
+March to August 2026. Four of the five conflicts resolve on source weight
+alone.
 
 | Claim | Live site | Résumé corpus | Verdict | Needs Marius? |
 |---|---|---|---|---|
@@ -422,127 +549,135 @@ weight alone.**
 | Cloud cost | 37% | **$11M → $7M**, unanimous; "43%" appears attached to that same pair | **$11M → $7M** | No |
 | Go-to-market | 72 weeks → 10 days | **3 days** *and* **10 days**, both current | **unresolved** | **Yes** |
 
-**The pattern is the finding.** In every resolved row the outlier is the
-site's own content — the published Notion page or a Skills tile — and the
-résumés agree with each other. The site is the stale copy, not the source of
-truth. `210,000` is a stray zero that exists nowhere else in twenty documents;
-`125 → 3` and `4 weeks → 3 days` are Skills-tile drift. §3 already uses the
-correct figure in all four cases, so no copy changes.
+**The pattern is the finding, and §0 has now confirmed it twice over.** In every
+resolved row the outlier is the site's own content — the published Notion page
+or a Skills tile — and the résumés agree with each other. The site is the stale
+copy, not the source of truth. It was stale about the numbers, and it is stale
+about his job and his book.
 
-**On the 43%.** It is not a competing measurement, it is bad arithmetic:
-$11M → $7M is a 36% reduction, and 43% would need $6.27M. The site's 37% is
-simply that number rounded. Quoting the dollars, as §3 does, sidesteps a
-percentage that is wrong in one of the two places it appears.
+**On the 43%.** Not a competing measurement, just bad arithmetic: $11M → $7M is
+a 36% reduction, and 43% would need $6.27M. The site's 37% is that number
+rounded. Quoting the dollars, as §3 does, sidesteps a percentage that is wrong
+in one of the two places it appears.
 
 **The one that is real: 3 days or 10 days.** Both are live and neither is a
-typo. `10 days` is the long-standing résumé line, in the April master and
-still in the July requisition-tailored versions. `3 days` is in Marius's own
-dictated June 2026 account — *"costs were reduced down to 7 million with a 3
-days go to market"* — and in the newer highlight bullets. The likely
-explanation is that these are **two different metrics**: that same June note
-says *"reduced release cycles to 3 days"* one paragraph after using 3 days for
-go-to-market, which is exactly what conflating a release cycle with an
-idea-to-production cycle looks like. If that is right, the honest line is
-*72 weeks → 10 days go-to-market*, with the 3-day release cadence as a separate
-claim. **I am not making that call for him — it is his career, and the two
-readings differ by more than 3×.** §3 uses 10 days, the conservative figure,
-and is correct as written if he confirms.
+typo. `10 days` is the long-standing résumé line, in the April master and still
+in the July requisition-tailored versions. `3 days` is in Marius's own dictated
+June 2026 account — *"costs were reduced down to 7 million with a 3 days go to
+market"* — and in the newer highlight bullets. The likely explanation is that
+these are **two different metrics**: that same June note says *"reduced release
+cycles to 3 days"* one paragraph after using 3 days for go-to-market, which is
+exactly what conflating a release cycle with an idea-to-production cycle looks
+like. If that is right, the honest line is *72 weeks → 10 days go-to-market*,
+with the 3-day release cadence as a separate claim. I am not making that call
+for him. §3 uses 10 days, the conservative figure.
+
+### Spelling — resolved, US
+
+This was question 4 of the old set and it is now answered on evidence rather
+than preference. The site should match the book, because the site now points at
+the book and a reader moves between them in one click. Marius's own book prose
+is **US-side**: `centerline`, `meters`, `theater`, `behaviors`. It carries some
+Commonwealth vocabulary — `aeroplane`, `fortnight` — but those are word choices,
+not spellings, and they are part of his voice rather than a convention to
+normalize. So: **US spelling**, which is what §3 is written in. The current
+build is Australian (`defence`, `organisation`) and needs a pass.
 
 ---
 
 ## 5. Applied against the current build
 
-The static rebuild in `index.html` carried the Notion content across close to
-verbatim — all seven technology blocks, the three long Skills essays, the
-"I possess a talent for…" quote and the `210,000` figure are all in it. So
-every cut in §2 still applies as written. Line numbers are against
-`index.html` at commit `8ea2df4`, re-verified 3 September 2026 — every anchor
-below still matches. They will drift as NEXAA-45 edits the file, so match on
-the quoted text rather than the number.
-
-One thing the re-check surfaced: the current meta description is **208
-characters**, so search results and link previews cut it off mid-sentence. The
-replacement in §3 is 147. That makes the line-7 swap the highest-value single
-edit in this table, not a cosmetic one.
+Line numbers are against `index.html` at commit `0a0e232`. They will drift as
+NEXAA-45 edits the file, so match on the quoted text rather than the number.
 
 | Line | Today | Change |
 |---|---|---|
-| 6 | `<title>Marius Nel — Software Engineering Leader` | append `, Seattle` |
-| 7 | meta description | replace with §3 (see the Echodyne note) |
+| 6 | `<title>… Software Engineering Leader` | append `, Seattle` |
+| 7 | meta description, **208 chars**, truncates | replace with §3 Version A or B |
 | 10 | `og:type` `profile` | **correct — no change** |
 | 13 | `og:title` | **correct — no change** |
 | 14 | `og:description` | replace with §3 |
 | 17 | `og:image` absolute URL | **correct — no change** |
-| 20 | `og:image:alt` | add `MYOB` to the employer list |
-| 91 | eyebrow `Software Engineering Leadership` | → `Software engineering leader · Seattle` |
-| 93–97 | hero lede | replace with §3 lede |
+| 20 | `og:image:alt` | match the chosen employer list |
+| 39 | `"jobTitle": "Software Engineering Leader"` | → `"Director of Software Engineering"` |
+| 45–50 | `alumniOf` only; no Echodyne | add `worksFor` — **only with Version A** |
+| 91 | eyebrow `Software Engineering Leadership` | → `Director of Software Engineering · Seattle` |
+| 93–97 | hero lede, `Amazon Alexa, AWS S3 and EC2, Oracle Health and Echodyne` — lists his current employer as past | replace with §3 lede |
 | 99–102 | `"I possess a talent for…"` pull quote | replace with the PR-review line in §3 |
-| — | *(nothing)* | insert availability line — **holds for Marius's yes** |
-| 107 | `Book time with me` | → `Book 30 minutes` |
+| — | *(nothing)* | ~~availability line~~ — **withdrawn, do not build** |
+| 107 | `Book time with me` | → `Read From Code to Team`, linking to Amazon |
 | 109–116 | two ghost buttons, equal weight | demote to text links (design call, NEXAA-45) |
 | 129–130 | eyebrow `Career Highlights` + `Outcomes, measured` | → `Outcomes` + §3 lede |
+| 167 | `defence technology` | → `defense` (see §4) |
+| — | *(nothing)* | **insert the Books section** from §3 |
+| 231 | `Enterprise &amp; Defence Technology` | → `Defense` |
+| 233 | `Oracle Health`, undated | add `10/2024 – 06/2026`, move below Echodyne |
+| 234 | `Director of Software Development` — Echodyne, undated, listed last | → `Director of Software Engineering`, dated `09/2026 – present`, **moved to the top of the section** |
 | 246–247 | eyebrow `Skills` + `How I lead` | → `How I work` |
-| 250–266 | 3 essays, ~150 words each | replace with §3's three ~50-word items — the headings change too (`Communication / Growth / Customer Focus` → `Hands-on / Turnarounds / Growing people`), so this is a substitution, not a trim |
-| 259 | `210,000` hardware assets | → `21,000+` — **now evidence-backed, not a judgement call**: 14+ résumé documents say 21,000+ and nothing says 210,000. See §4. |
+| 250–266 | 3 essays, ~150 words each | replace with §3's three ~50-word items — headings change too (`Communication / Growth / Customer Focus` → `Hands-on / Turnarounds / Growing people`), so this is a substitution, not a trim |
+| 259 | `210,000` hardware assets | → `21,000+` — evidence-backed, see §4 |
 | 272–328 | whole `#tech` section, 7 blocks | **delete**, replaced by the one Technology line at the end of How I work |
 | 333–334 | eyebrow `✉️ Contact` + `Let's talk` | → `Get in touch` + §3 lede |
+| 346 | `Book a time that suits you` | keep, but reorder below email |
 | 363 | footer quote | **keep as-is** |
+| — | throughout | normalize Australian → US spelling |
 
-**Timeline corrections** (§3, Career) — the duplicate NAB entry is worse than
-the Notion page suggested: lines 201–203 are *three* consecutive NAB entries,
-`Service Delivery Manager` / `Integration Delivery Manager` / `Service
-Delivery Manager`. Collapse to one line. Oracle Health (line 233) is still
-undated, and Decipha is still absent.
+**Timeline corrections** (§3, Career) — lines 201–203 are *three* consecutive
+NAB entries: `Service Delivery Manager` / `Integration Delivery Manager` /
+`Service Delivery Manager`. Collapse to one line. Decipha is still absent.
+
+---
 
 ## 6. Handover
 
-- **Product Designer (NEXAA-45):** the structure in §2 is what the design has
-  to hold — hero with one primary button, five outcome cards, three "how I
-  work" items with a technology line, timeline, contact. Two sections fewer
-  than today.
-- **Build:** §3 is final text and §5 is the diff to apply. Every change above
-  is buildable now except the availability line.
-- **Blocked on Marius:** the availability line, **one** number conflict
-  (72 weeks → 3 or 10 days — the other four are settled in §4), US vs
-  Australian spelling, whether Echodyne is named up front, and confirmation of
-  the audience assumption in §1.
-- **Not published.** Nothing here goes live without the user's explicit
-  approval. `index.html` is deliberately untouched by this document — the open
-  questions still change exact words, and this repo publishes on push. The
-  `210,000` fix is now evidence-backed rather than a guess, but it ships with
-  the rest of the §5 diff on his approval, not ahead of it.
+- **Product Designer (NEXAA-45):** the structure changed since 3 September.
+  It is now hero with one primary button → Outcomes (5 cards) → How I work (3
+  items + a technology line) → **Books (new)** → Career timeline → Contact. One
+  section fewer than today, not two, because Books arrives as the other three
+  collapse.
+- **Build:** §3 is final text and §5 is the diff. The Echodyne title and
+  dating fix in §5 is worth doing on its own merits whatever else happens —
+  the page currently states his current job title incorrectly and formats his
+  current job as a past one.
+- **Blocked on Marius — three items, listed in §0:** the audience in §1,
+  whether Echodyne is named in the link preview, and 3-vs-10 days. Plus two
+  smaller build questions raised in §3: the publication status of Books 2–6,
+  and whether he wants a line covering 2026 between Oracle and Echodyne.
+- **The availability line is withdrawn, not pending.** It needs no answer. It
+  must not ship.
+- **Not published.** `index.html` is deliberately untouched by this document —
+  this repo publishes on push.
 
-## 7. Status, 18 September 2026
+---
 
-**The content work is done.** §1–§5 are the three deliverables the issue asked
-for — the audience sentence, the section collapse, and final copy including
-title and meta description. Nothing about them is outstanding, and nothing has
-been outstanding since 3 September.
+## 7. Status, 19 September 2026
 
-**What the issue waits on is Marius.** It was five questions; it is now four,
-because §4 was re-checked against the Notion résumé corpus this run and four of
-the five number conflicts resolved on evidence. The remaining four:
+**The content deliverable is complete and has been corrected.** §1–§3 are the
+three things the issue asked for: the audience sentence, the section collapse,
+and final copy including title and meta description. §0 records why the
+3 September version of §1 and §3 had to be rewritten.
 
-1. The availability line — the one genuinely new claim, and the only line that
-   will not be built without a yes.
-2. Go-to-market: 72 weeks → **3 days** or **10 days**. §4 has the case for each
-   and the likely reconciliation.
-3. US or Australian spelling.
-4. Echodyne named in the title and link preview, or not — both versions written.
+**What this run changed.** The deliverable was reported complete on 3 September
+and re-confirmed complete on 18 September. It was not. It was written against a
+career situation that had already ended: Marius had been at Echodyne for eleven
+days and had a book on Amazon, and the copy said he was looking for work. The
+one line the document had been holding for his approval — *"Open to Director and
+Senior Engineering Manager roles"* — was the single worst thing that could have
+been published on his page this month. It is withdrawn.
 
-Plus the §1 audience assumption to confirm, which changes emphasis rather than
-words. Until these land, applying the §5 diff would bake guesses into a page
-that publishes on push.
+**Control plane unreachable, third consecutive run.** `paperclip.fixlink.org`
+returns NXDOMAIN from this machine — the whole domain, not just the host —
+while the rest of the internet resolves normally. So the issue thread cannot be
+read, the questions cannot be put to Marius as an interaction, and the issue
+status cannot be set. That is why this document is in the repo rather than on
+the issue.
 
-**Control plane unreachable, second run running.** `paperclip.fixlink.org`
-returns NXDOMAIN — the whole domain, not just the host — while the rest of the
-internet resolves normally from this machine. So the issue thread could not be
-read, the four questions could not be put to Marius as an interaction, and the
-issue status could not be set. That is why this note is in the repo rather than
-on the issue.
+**First action when the control plane returns**, in order:
 
-The consequence worth flagging: **the questions in §0 may never have reached
-Marius.** They were written on 3 September and every run since that tried to
-post them has hit this outage. If the thread turns out to be empty of them when
-the control plane returns, the issue has been silently idle for two weeks, and
-the first action on reconnection is to post them — not to resume drafting.
+1. Post §0 to the issue. The withdrawal of the availability line is the
+   headline, not the copy revisions.
+2. Check whether the 3 September questions ever reached Marius. If the thread
+   is empty of them, the issue has been silently idle for sixteen days — and in
+   this case that silence was load-bearing, because an answer of "yes, publish
+   the availability line" would have been acted on.
+3. Then the three open questions in §0.
