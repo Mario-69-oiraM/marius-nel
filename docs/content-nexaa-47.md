@@ -22,9 +22,12 @@ not need to wait on them — the build does.
    *"Open to Director and Senior Engineering Manager roles — Seattle or
    remote."* This is the one genuinely new claim on the page and the only line
    I will not build without a yes.
-3. **Which of the five conflicting numbers are right?** Table in §4. The
-   210,000 vs 21,000 asset count is an order of magnitude and one of the two
-   is live on the site right now. I used the conservative figure in every case.
+3. **~~Which of the five conflicting numbers are right?~~ Now one, not five.**
+   On 18 September I checked every figure against the résumé corpus in Notion
+   (§4). Four of the five resolve on evidence and need nothing from Marius —
+   in each case the outlier is the *site's own* copy, not the résumé. The one
+   that genuinely needs him is **72 weeks → 3 days or 10 days**, because both
+   are current and they may be two different metrics.
 4. **US or Australian spelling?** §3 is written US-side because the reader in
    §1 is US-based; the current build is Australian. Trivially reversible.
 5. **Name Echodyne in the title and preview, or not?** I left it out and kept
@@ -402,22 +405,48 @@ not about work delivered.
 
 ---
 
-## 4. Numbers that disagree with each other
+## 4. Numbers that disagree with each other — resolved, except one
 
-Before any of this ships, Marius needs to settle five conflicts between the
-live Notion page and the July 2026 résumé. I used the **more conservative**
-figure everywhere and did not invent a reconciliation.
+**Updated 18 September 2026.** The first version of this section listed five
+conflicts and handed all five to Marius. That was more caution than the
+evidence warranted. I have now checked each figure against the full résumé
+corpus in Notion — roughly twenty tailored résumés, cover letters and dictated
+notes spanning March to August 2026 — and **four of the five resolve on source
+weight alone.**
 
-| Claim | Live site says | Résumé says | Used above |
-|---|---|---|---|
-| Hardware assets | 210,000 | 21,000+ | **21,000+** |
-| Go-to-market | 72 weeks → 10 days | 72 weeks → 3 days *(highlights)*, 10 days *(MYOB detail)* | **10 days** |
-| Cloud cost reduction | 37% | 43%, and $11M → $7M (36%) | **$11M → $7M** |
-| Provisioning | 127 → 5 days | 127 → 5 days; one Skills tile says 125 → 3 | **127 → 5 days** |
-| Site provisioning | *(not on site)* | 4 weeks → 1.5 days *(résumé)*, 4 weeks → 3 days *(Skills tile)* | **1.5 days** |
+| Claim | Live site | Résumé corpus | Verdict | Needs Marius? |
+|---|---|---|---|---|
+| Hardware assets | 210,000 | **21,000+**, unanimous across 14+ documents, Mar–Aug 2026 | **21,000+** | No |
+| Site provisioning | *(not on site)* | **1.5 days**, unanimous Apr–Jul 2026; only a Skills tile says 3 | **4 weeks → 1.5 days** | No |
+| Provisioning | 127 → 5 days | **127 → 5**, unanimous; only a Skills tile says 125 → 3 | **127 → 5 days** | No |
+| Cloud cost | 37% | **$11M → $7M**, unanimous; "43%" appears attached to that same pair | **$11M → $7M** | No |
+| Go-to-market | 72 weeks → 10 days | **3 days** *and* **10 days**, both current | **unresolved** | **Yes** |
 
-The 210,000 vs 21,000 gap is an order of magnitude on a public page. Whichever
-is right, the other one is currently published.
+**The pattern is the finding.** In every resolved row the outlier is the
+site's own content — the published Notion page or a Skills tile — and the
+résumés agree with each other. The site is the stale copy, not the source of
+truth. `210,000` is a stray zero that exists nowhere else in twenty documents;
+`125 → 3` and `4 weeks → 3 days` are Skills-tile drift. §3 already uses the
+correct figure in all four cases, so no copy changes.
+
+**On the 43%.** It is not a competing measurement, it is bad arithmetic:
+$11M → $7M is a 36% reduction, and 43% would need $6.27M. The site's 37% is
+simply that number rounded. Quoting the dollars, as §3 does, sidesteps a
+percentage that is wrong in one of the two places it appears.
+
+**The one that is real: 3 days or 10 days.** Both are live and neither is a
+typo. `10 days` is the long-standing résumé line, in the April master and
+still in the July requisition-tailored versions. `3 days` is in Marius's own
+dictated June 2026 account — *"costs were reduced down to 7 million with a 3
+days go to market"* — and in the newer highlight bullets. The likely
+explanation is that these are **two different metrics**: that same June note
+says *"reduced release cycles to 3 days"* one paragraph after using 3 days for
+go-to-market, which is exactly what conflating a release cycle with an
+idea-to-production cycle looks like. If that is right, the honest line is
+*72 weeks → 10 days go-to-market*, with the 3-day release cadence as a separate
+claim. **I am not making that call for him — it is his career, and the two
+readings differ by more than 3×.** §3 uses 10 days, the conservative figure,
+and is correct as written if he confirms.
 
 ---
 
@@ -454,7 +483,7 @@ edit in this table, not a cosmetic one.
 | 129–130 | eyebrow `Career Highlights` + `Outcomes, measured` | → `Outcomes` + §3 lede |
 | 246–247 | eyebrow `Skills` + `How I lead` | → `How I work` |
 | 250–266 | 3 essays, ~150 words each | replace with §3's three ~50-word items — the headings change too (`Communication / Growth / Customer Focus` → `Hands-on / Turnarounds / Growing people`), so this is a substitution, not a trim |
-| 259 | `210,000` hardware assets | → `21,000+` — see §4; this is the live order-of-magnitude conflict |
+| 259 | `210,000` hardware assets | → `21,000+` — **now evidence-backed, not a judgement call**: 14+ résumé documents say 21,000+ and nothing says 210,000. See §4. |
 | 272–328 | whole `#tech` section, 7 blocks | **delete**, replaced by the one Technology line at the end of How I work |
 | 333–334 | eyebrow `✉️ Contact` + `Let's talk` | → `Get in touch` + §3 lede |
 | 363 | footer quote | **keep as-is** |
@@ -473,31 +502,47 @@ undated, and Decipha is still absent.
   than today.
 - **Build:** §3 is final text and §5 is the diff to apply. Every change above
   is buildable now except the availability line.
-- **Blocked on Marius:** the availability line, the five conflicting numbers
-  in §4, US vs Australian spelling, whether Echodyne is named up front, and
-  confirmation of the audience assumption in §1.
+- **Blocked on Marius:** the availability line, **one** number conflict
+  (72 weeks → 3 or 10 days — the other four are settled in §4), US vs
+  Australian spelling, whether Echodyne is named up front, and confirmation of
+  the audience assumption in §1.
 - **Not published.** Nothing here goes live without the user's explicit
-  approval. `index.html` is deliberately untouched by this document — three of
-  the five open questions (spelling, Echodyne, the `210,000` figure) change the
-  exact words, and this repo publishes on push.
+  approval. `index.html` is deliberately untouched by this document — the open
+  questions still change exact words, and this repo publishes on push. The
+  `210,000` fix is now evidence-backed rather than a guess, but it ships with
+  the rest of the §5 diff on his approval, not ahead of it.
 
 ## 7. Status, 18 September 2026
 
-Woken on NEXAA-47 by the question *"what is the issue"*. The answer, plainly:
+**The content work is done.** §1–§5 are the three deliverables the issue asked
+for — the audience sentence, the section collapse, and final copy including
+title and meta description. Nothing about them is outstanding, and nothing has
+been outstanding since 3 September.
 
-**The content work is done.** §1–§5 above are the three deliverables the issue
-asked for — the audience sentence, the section collapse, and final copy
-including title and meta description. Nothing about them is outstanding.
+**What the issue waits on is Marius.** It was five questions; it is now four,
+because §4 was re-checked against the Notion résumé corpus this run and four of
+the five number conflicts resolved on evidence. The remaining four:
 
-**What the issue is waiting on is five answers from Marius**, listed in §0 and
-repeated in §6. The blocking one is the availability line; the other four
-(audience assumption, which of the conflicting numbers are right, US vs
-Australian spelling, whether Echodyne is named up front) each change specific
-words in §3 rather than the structure. Until they land, applying the §5 diff
-would bake in four guesses on a page that publishes on push.
+1. The availability line — the one genuinely new claim, and the only line that
+   will not be built without a yes.
+2. Go-to-market: 72 weeks → **3 days** or **10 days**. §4 has the case for each
+   and the likely reconciliation.
+3. US or Australian spelling.
+4. Echodyne named in the title and link preview, or not — both versions written.
 
-**Second, unrelated problem this run:** the Paperclip control plane is
-unreachable — `paperclip.fixlink.org` returns NXDOMAIN, so the issue thread
-could not be read or commented on and the issue status could not be set. That
-is why this status note is in the repo rather than on the issue. It is
-infrastructure, not content.
+Plus the §1 audience assumption to confirm, which changes emphasis rather than
+words. Until these land, applying the §5 diff would bake guesses into a page
+that publishes on push.
+
+**Control plane unreachable, second run running.** `paperclip.fixlink.org`
+returns NXDOMAIN — the whole domain, not just the host — while the rest of the
+internet resolves normally from this machine. So the issue thread could not be
+read, the four questions could not be put to Marius as an interaction, and the
+issue status could not be set. That is why this note is in the repo rather than
+on the issue.
+
+The consequence worth flagging: **the questions in §0 may never have reached
+Marius.** They were written on 3 September and every run since that tried to
+post them has hit this outage. If the thread turns out to be empty of them when
+the control plane returns, the issue has been silently idle for two weeks, and
+the first action on reconnection is to post them — not to resume drafting.
