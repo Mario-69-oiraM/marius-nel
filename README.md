@@ -7,9 +7,10 @@ Notion-hosted page, served from GitHub Pages.
 
 ```
 index.html            single-page site (hero, outcomes, how I work, books, timeline, contact)
-404.html              not-found page; forwards old Notion sub-page URLs to nel-id-au.notion.site
+books/index.html      Books index — nine companion-material entries, each still opening on notion.site (NEXAA-114 phase 1)
+404.html              not-found page; forwards the old Notion Books URL to /books/ and other sub-page URLs to nel-id-au.notion.site
 robots.txt            crawler directives
-sitemap.xml           single-URL sitemap
+sitemap.xml           sitemap: / and /books/
 .nojekyll             serve files verbatim; skip Jekyll processing
 assets/css/site.css   all styles — design tokens, light/dark themes, print styles
 assets/js/site.js     theme toggle, mobile nav, scroll spy (no dependencies)
@@ -47,9 +48,10 @@ To run it by hand:
 ./scripts/verify-site.sh
 ```
 
-Checks the served HTML for a real `<title>`, `<meta description>`, canonical and
-`og:` tags, an absolute `og:image`, reachable assets, and at least 300 words of
-content present **without JavaScript**. That last check is the point of the whole
+Checks the served HTML of `/` and `/books/` for a real `<title>`, `<meta
+description>`, canonical and `og:` tags, an absolute `og:image`, reachable
+assets, and content present **without JavaScript** — at least 300 words on the
+front page, and on `/books/` the name of every one of the nine entries. That last check is the point of the whole
 rebuild — the Notion page it replaces served 15 words and the title "Notion".
 
 Pass a URL to check a deployment instead of the working tree:

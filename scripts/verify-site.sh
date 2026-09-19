@@ -34,11 +34,16 @@ fi
 
 echo "Verifying $TARGET"
 
-BODY=$(mktemp)
-CODE=$(curl -sL "$TARGET" -o "$BODY" -w '%{http_code}')
-[ "$CODE" = "200" ] || { echo "FAIL: index returned HTTP $CODE"; exit 1; }
-
-MIN_WORDS="$MIN_WORDS" python3 - "$BODY" <<'PY'
+# check_page <path> <min words> [required phrase]...
+# Fetches one page and asserts the head tags and the no-JS word floor.
+check_page() {
+  local path="$1" min_words="$2"; shift 2
+  local body code
+  body=$(mktemp)
+  code=$(curl -sL "${TARGET%/}/$path" -o "$body" -w '%{http_code}')
+  [ "$code" = "200" ] || { echo "FAIL: /$path returned HTTP $code"; exit 1; }
+  echo "  page         /$path"
+  MIN_WORDS="$min_words" python3 - "$body" "$@" <<'PY'
 import html, os, re, sys
 
 src = open(sys.argv[1], encoding="utf-8", errors="replace").read()
@@ -71,6 +76,12 @@ words = html.unescape(re.sub(r"<[^>]+>", " ", stripped)).split()
 if len(words) < min_words:
     failures.append(f"only {len(words)} words without JS (need >= {min_words})")
 
+# Phrases that must be in the raw HTML — e.g. every entry on the Books index.
+text = " ".join(words)
+for phrase in sys.argv[2:]:
+    if phrase not in text:
+        failures.append(f"missing text: {phrase!r}")
+
 if title:
     print(f"  title        {title}")
 if desc:
@@ -81,6 +92,16 @@ for f in failures:
     print(f"  FAIL: {f}")
 sys.exit(1 if failures else 0)
 PY
+}
+
+check_page "" "$MIN_WORDS"
+
+# The Books index is a list, not prose, so its floor is lower — but every one
+# of the nine Notion sub-pages must be named without JS (NEXAA-114).
+check_page "books/" 150 \
+  "From Code to Team" "Team Edition" "Installing the Operating System" \
+  "Your New Lead" "Deciding Who Joins" "Beyond Your Team" "Look Up" \
+  "Other material" "Lunch and Learn"
 
 for path in assets/css/site.css assets/js/site.js assets/img/marius-nel.jpg \
             assets/img/og-card.jpg assets/img/favicon.svg robots.txt sitemap.xml; do
