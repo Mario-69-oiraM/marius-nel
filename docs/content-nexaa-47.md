@@ -1,7 +1,9 @@
 # marius-nel.com — audience, call to action, and final copy
 
-NEXAA-47 · content deliverable · drafted 3 September 2026 · **materially revised
-19 September 2026** · Mike, Growth & Content
+NEXAA-47 · content deliverable · drafted 3 September 2026 · materially revised
+19 September 2026 · settled calls from NEXAA-53 folded in 19 September 2026 ·
+**final — Marius's last four answers folded in, 19 September 2026 (revision 3)**
+· Mike, Growth & Content
 
 Source material read through the Notion connector: the published page
 (`192ac30a…`), the `Site` index, the `Site / Books` tree, the full `Skills`
@@ -47,33 +49,65 @@ Three further things the 3 September draft did not know:
    front page does not mention any of it. This is the largest missed asset on
    the site and it changes what the page is for — see §1 and §3.
 3. **He started a business** (Iterum Works) and runs a podcast season off the
-   book. Neither appears on the page. I have not proposed copy for either —
-   see the open questions.
+   book. Neither appears on the page, and neither is added: the only place
+   they could have gone was a 2026 line in the timeline, and Marius declined
+   one (see below).
 
 I did not go looking for this. It surfaced while checking the one remaining
 number conflict from the last run. The lesson is the same one §4 already drew
 about the metrics: **the site is the stale source.** It was stale about the
 numbers; it is now eleven days stale about his job and about a book he wrote.
 
+### Settled by Marius on NEXAA-53 (card `233c2a90`, 19 September, 02:38Z)
+
+Four calls came back from the UX brief and are now folded into this document
+as decisions, not proposals:
+
+1. **Reader.** The §1 sentence is confirmed verbatim. The audience question is
+   closed.
+2. **Primary action.** Book button; email as a text link beside it; the
+   calendar link moves down to Contact. Marius did **not** choose to keep the
+   calendar in the hero. §3 hero and Contact reflect this.
+3. **Outcome cards: four.** The Alexa card is cut. §2 and §3 now carry four.
+4. **Word budget.** ~450 words *with* Books is fine, on one condition that
+   Rosa (NEXAA-45) checks at build: at **1280×800, cold load**, the positioning
+   line (*"I still review pull requests…"*) and the book button are both
+   visible without scrolling. If Books pushes the hero down, **cut How I work
+   before Books.** §3 marks the fallback.
+
+### Settled by Marius on NEXAA-47 (card `d65d7886`, 19 September)
+
+The last four questions came back on one card. All four are folded in below as
+decisions:
+
+1. **Meta description: Version B, employer-free.** The link preview and search
+   snippet do not name Echodyne. The page body still does — hero lede and top
+   of the timeline — which is what the question was always about: the cached,
+   syndicated snippet, not the page. Consequences in §3: `og:image:alt` matches
+   B's employer list, and the JSON-LD gets `jobTitle` but **no** `worksFor`.
+2. **Go-to-market: 72 weeks → 10 days.** The Outcomes card is correct as
+   written. The 3-day figure is a release-cycle number and is not on the page.
+3. **Books 2–6: not published. Book 1 only.** The Books section names *From
+   Code to Team* and treats everything else as companion material. Nothing is
+   listed as available without a link.
+4. **No line for 2026 between Oracle Health and Echodyne.** The timeline shows
+   Oracle Health `10/2024 – 06/2026` and Echodyne `09/2026 – present`, dated,
+   with nothing in between. The gap is visible and uncharacterized, and that is
+   his call.
+
 ### What is still open, after this revision
 
-Down from five, then four, now **three** — and they are different questions
-than before:
+**Nothing on the copy.** §3 is final. What remains is not a content question:
 
-1. **Is the audience in §1 right?** I have rewritten it for a reader who has
-   just met Marius or just read him, not for a recruiter. Reasoning in §1. This
-   is the one that changes the page.
-2. **Name Echodyne on the page, and in the link preview?** It is a defense
-   contractor under ITAR, and his manager noted in the 17 September 1:1 that the
-   company is tightening its security and disclosure posture. The site already
-   names it, so this is a question about whether it *should*, not a new
-   exposure. Both versions written in §3.
-3. **Go-to-market: 72 weeks → 3 days or 10 days?** Unchanged from the last run.
-   §4 has the case for each and the likely reconciliation. §3 uses the
-   conservative figure and is correct as written if he confirms it.
+- **Approval to build.** The copy goes to Tess (NEXAA-55) for the `index.html`
+  rewrite once the user approves this revision — that is the confirmation card
+  on this issue. The DNS cutover to the live domain is a separate, later
+  decision on NEXAA-55 and is not touched by this.
+- **The fold check.** Rosa (NEXAA-45) checks at 1280×800 cold load that the
+  positioning line and the book button are above the fold. If not, How I work
+  is cut before Books. Marius set that condition on NEXAA-53.
 
-**US vs Australian spelling is now resolved** and is no longer a question —
-see §4.
+**US vs Australian spelling is resolved** — US, see §4.
 
 ---
 
@@ -85,7 +119,8 @@ worth interviewing. He is not a candidate any more. Replacing it:
 > **Someone who has just met Marius, or just read something he wrote, lands
 > here to work out who he is — and leaves with the book, or with his email.**
 
-Three things follow, and they are the brief.
+**Confirmed verbatim by Marius on NEXAA-53, 19 September.** This is the brief.
+Three things follow from it.
 
 **Nobody arrives by search. They arrive by name — and now, increasingly, by
 book.** This was already a verification page rather than a discovery page. What
@@ -104,10 +139,10 @@ for what NEXAA-46 settled: credibility and contact, not a funnel.
 **The calendar should stop being the primary action.** In the old draft the
 scheduling link was the one path that ended in a meeting, and that was right for
 a job search. A sitting Director with a public "book 30 minutes" button is
-inviting cold meetings he now has no room for. Recommendation: the book is the
-primary action, email is second, and the scheduling link moves down into the
-contact section rather than the hero. His call — flag it if he wants the
-calendar kept up top.
+inviting cold meetings he now has no room for. **Settled:** the book button is
+the primary action, email is a text link beside it, and the scheduling link
+moves down into the Contact section. Marius chose this on NEXAA-53 and did not
+take the keep-calendar-in-hero option.
 
 ### What does *not* change
 
@@ -121,8 +156,8 @@ everything else on the site is free.
 
 ## 2. Collapsing the three overlapping sections
 
-*Unchanged from 3 September except for the addition at the end. The analysis
-below was verified against `index.html` and still holds.*
+*Verified against `index.html` on 3 September; Outcomes trimmed to four cards
+on 19 September per NEXAA-53.*
 
 ### What is wrong
 
@@ -147,7 +182,7 @@ Three sections become **two**, plus one line — and one new section is added.
 
 | Today | Becomes | Answers |
 |---|---|---|
-| Career Highlights (5 metric bullets) | **Outcomes** — same five, one sentence each | *What has he produced?* |
+| Career Highlights (5 metric bullets) | **Outcomes** — four of the five, one sentence each (Alexa cut) | *What has he produced?* |
 | Skills (3 essays + 30 tiles) | **How I work** — 3 items, ~50 words each | *What is he like to work with?* |
 | Technical Experience (7 blocks, ~60 items) | **one line inside How I work** | *Is he still technical?* |
 | *(nothing on the front page)* | **Books** — new, see §3 | *What can I take away?* |
@@ -174,9 +209,20 @@ three-country arc is genuinely unusual. It earns its place.
   one line.
 - **The positioning quote as written.** "I possess a talent for…" is résumé
   voice — it asserts the thing instead of showing it. Replaced in §3.
+- **The Alexa outcome card.** Cut on NEXAA-53 — four cards, not five. The
+  numbers (+27% YoY, routing accuracy +31%, team +57%, attrition under 2%)
+  stay in the résumé; they do not need a fifth card to make the point the
+  other four already make.
 
 Net: the same evidence, roughly 60% less text, one clear action, and one
 section that gives the reader something instead of asking for something.
+
+### Word budget — settled, with one build condition
+
+Marius accepted **~450 words including Books**. The condition, which Rosa
+checks on NEXAA-45 rather than me: at **1280×800 on a cold load**, the
+positioning line and the book button must both be visible without scrolling.
+If Books pushes the hero below that line, **cut How I work before Books.**
 
 ### What gets added
 
@@ -190,9 +236,9 @@ front page spends 400 words listing database engines. Copy is in §3.
 
 ## 3. Final copy
 
-Ready to build, with the three §0 questions marked where they bite. Where the
-existing static rebuild (`index.html`) already carries a version of a line, this
-text supersedes it.
+Ready to build. No open questions — every decision that used to be marked
+here is settled in §0. Where the existing static rebuild (`index.html`) already
+carries a version of a line, this text supersedes it.
 
 **Spelling: US.** Resolved on evidence rather than preference — see §4. The
 current build is Australian and needs normalizing.
@@ -210,38 +256,27 @@ Echodyne": a title is the most expensive thing on the page to keep current, it
 is what every existing link and bookmark shows, and it should survive his next
 job change. The current role belongs in the body, where updating it is cheap.
 
-### Meta description
-
-**Version A — names the current employer** (139 characters):
-
-```
-Director of Software Engineering at Echodyne. Twenty years building teams at
-Amazon, AWS and Oracle Health. Author of From Code to Team.
-```
-
-**Version B — employer-free** (147 characters):
+### Meta description — **Version B, settled**
 
 ```
 Engineering leader in Seattle. Twenty years building teams at Amazon, AWS,
 Oracle Health and MYOB. Author of From Code to Team, a playbook for new leads.
 ```
 
-**My recommendation is B, and this reverses what I wrote on 3 September.** Not
-because Echodyne is weak — it is the freshest and most relevant fact on the
-page — but for two reasons that only became visible this week. First, a link
-preview is cached and syndicated; pinning the current employer into it means
-every stale copy misstates where he works the moment that changes. Second,
-Echodyne is a defense contractor under ITAR, and his own manager described the
-company as tightening a historically open disclosure posture. Naming a current
-defense employer in a search snippet is his call and his employer's, not mine.
-Version A is written and ready if he wants it.
+147 characters. Marius chose the employer-free version on 19 September. The
+reasoning, for the record: a link preview is cached and syndicated, so pinning
+the current employer into it means every stale copy misstates where he works
+the moment that changes; and Echodyne is a defense contractor under ITAR whose
+disclosure posture is tightening, so naming it in a search snippet was his call
+and his employer's. Version A (*"Director of Software Engineering at Echodyne.
+Twenty years building teams at Amazon, AWS and Oracle Health. Author of From
+Code to Team."*) is not chosen and should not be built.
 
-Either version is a large improvement on the current line, which is **208
-characters** — it is truncated mid-sentence in every search result and link
-preview today.
+This replaces the current line, which is **208 characters** and truncates
+mid-sentence in every search result and link preview today.
 
-**Echodyne still belongs on the page**, prominently, in the hero and at the top
-of the timeline. The question above is only about the link preview.
+**Echodyne still belongs on the page**, prominently, in the hero lede and at
+the top of the timeline. The decision was only ever about the link preview.
 
 ### Open Graph
 
@@ -254,9 +289,8 @@ og:type         profile
 ```
 
 The last line is the differentiator, so it stays in the preview. The middle
-clause is the employer-free phrasing; swap in `Now Director of Software
-Engineering at Echodyne.` if Version A wins above. `og:title` and `og:type` in
-the current build already match — no change needed on either.
+clause is the employer-free phrasing, consistent with Version B. `og:title` and
+`og:type` in the current build already match — no change needed on either.
 
 **Leave `og:image` alone.** It already points at
 `https://www.marius-nel.com/assets/img/og-card.jpg`, a real 1200×630 card with
@@ -264,19 +298,23 @@ matching `og:image:width`, `og:image:height` and `og:image:alt`. The absolute
 URL is correct and should stay absolute — relative `og:image` values are
 ignored by most crawlers.
 
-The `og:image:alt` currently reads `…Amazon, AWS, Oracle Health, NAB.` It
-should match the employer list in whichever meta description is chosen.
+The `og:image:alt` currently ends `…Amazon, AWS, Oracle Health, NAB.` Replace
+the whole attribute so it matches Version B:
+
+```
+Marius Nel — Software Engineering Leader. South Africa, Australia, United
+States. Amazon, AWS, Oracle Health, MYOB.
+```
 
 ### Structured data
 
-The JSON-LD block lists `alumniOf` only, and Echodyne is absent from it
-entirely. Two changes:
+The JSON-LD block lists `alumniOf` only. One change, and one deliberate
+non-change:
 
-- Add `"worksFor": {"@type": "Organization", "name": "Echodyne"}` — **only if
-  Version A wins.** It is the same disclosure question.
-- Add `"jobTitle": "Director of Software Engineering"`, replacing the generic
-  `"Software Engineering Leader"`. This is safe either way; it names the role,
-  not the employer.
+- Change `"jobTitle"` from `"Software Engineering Leader"` to
+  `"Director of Software Engineering"`. It names the role, not the employer.
+- **Do not add `worksFor`.** It is the same disclosure as the meta description,
+  and Version B was chosen. `alumniOf` stays as it is.
 
 ---
 
@@ -302,11 +340,11 @@ Director of Software Engineering · Seattle
 > and EC2. I build teams from scratch, and I take on the ones that are
 > struggling.
 
-*Employer-free variant, if Version B wins the disclosure question and he wants
-it consistent:* replace the first sentence with **"I lead software engineering
-at a radar company in Seattle."** I would not do this — naming the employer in
-the body is normal and low-risk, and the reader who has just met him already
-knows where he works. But the option is here.
+Build the lede as written, Echodyne included. Version B of the meta
+description removes the employer from the *snippet*, not from the page: naming
+it in the body is normal, and the reader who has just met him already knows
+where he works. The employer-free body variant offered in revision 2 is
+dropped.
 
 **The line that does the work** (set apart, replacing the yellow callout)
 
@@ -326,8 +364,11 @@ Wednesday afternoons. It is a claim the evidence carries.
 [ Read From Code to Team ]   marius@nel.id.au   LinkedIn
 ```
 
-Primary button, then two text links. The scheduling link moves to the contact
-section — see §1.
+Primary button, then two text links. The scheduling link moves to the Contact
+section. **Settled on NEXAA-53** — this is no longer a recommendation.
+
+**Fold condition (Rosa, NEXAA-45):** at 1280×800 cold load, the *"I still
+review pull requests…"* line and this button must both sit above the fold.
 
 ~~Availability line~~ — **withdrawn, see §0. Do not build.**
 
@@ -343,9 +384,9 @@ Outcomes
 
 **Lede**
 
-> Five things worth knowing, with the numbers attached.
+> Four things worth knowing, with the numbers attached.
 
-**Cards**
+**Cards** — four, settled on NEXAA-53. The Alexa card is cut.
 
 **$171M**
 **Provisioning automation — Amazon EC2**
@@ -367,14 +408,17 @@ framework the external auditor commended.
 Delivered 17% under budget. New site provisioning went from 4 weeks to 1.5
 days, and the work produced 5 patents.
 
-**+27% YoY**
-**Alexa subscription growth**
-Traced the drop to intent-routing defects in the language model — routing
-accuracy up 31%. Grew the team 57% and held attrition under 2%.
+~~**+27% YoY** — Alexa subscription growth~~ — **cut on NEXAA-53. Do not
+build.**
 
 ---
 
 ### Section: How I work
+
+**This is the section that goes if the fold condition fails.** If Books pushes
+the positioning line or the book button below the fold at 1280×800, cut this
+section before touching Books. That is Marius's call on NEXAA-53, and Rosa
+checks it on NEXAA-45.
 
 **Heading**
 
@@ -442,13 +486,12 @@ Books
 >
 > `[ Companion material ]`
 
-**Build note — this section needs one answer before it ships.** `Site / Books`
-lists six books. Only **Book 1** is verifiably published: it has an Amazon
-listing (`B0HG67BG7Z`) and the Lunch & Learn scripts reference a second
-edition. Books 2 through 6 exist as pages, but I found no evidence of
-publication, so the copy above names Book 1 only and treats the rest as
-companion material. **If Books 2–6 are published, send me the links and I will
-rewrite this as a series.** I will not list a book as available without one.
+**Settled — Book 1 only.** `Site / Books` lists six books; Marius confirmed on
+19 September that only *From Code to Team* is published (Amazon `B0HG67BG7Z`,
+second edition). Books 2 through 6 are not listed, named, or linked on the
+front page, and the section is built exactly as above. When another book
+publishes, this section becomes a series — that is a future revision, not a
+build condition.
 
 **Separate defect worth fixing while we are in there:** two different pages are
 both numbered "Book 3" — *Installing the Operating System* and *Your New Lead*.
@@ -485,14 +528,11 @@ Structure and entries as already built, with **five** corrections:
    résumé and missing from the timeline. It is the $25M line-of-business role
    and the first time he scaled a team from 5. It should be in the Australia
    section.
-5. **The 2026 gap between Oracle and Echodyne is real and currently invisible.**
-   He was laid off in the Oracle Health restructure and spent the year
-   consulting, writing and starting a business. An undated timeline that jumps
-   Oracle → Echodyne hides a gap that a careful reader will notice and wonder
-   about; a dated one that shows what he did with it is stronger than either.
-   **I have not written copy for this** — how he characterizes that year is his
-   to decide, and I am not putting words about a layoff on his page. If he
-   wants a line, I will draft it.
+5. **No line for 2026 between Oracle Health and Echodyne — settled.** Marius
+   chose not to add one (19 September). The timeline is dated, so the gap
+   between `06/2026` and `09/2026` is visible and uncharacterized, and that is
+   his call to make. Do not insert an entry, a note, or a consulting line to
+   cover it.
 
 ---
 
@@ -518,7 +558,8 @@ Book 30 minutes    calendar.notion.so/meet/mariusnel/meet
 ```
 
 Email first, calendar last — the reverse of the 3 September draft, for the
-reason in §1.
+reason in §1. This is where the calendar link lives now; it is not in the
+hero. Settled on NEXAA-53.
 
 ---
 
@@ -547,10 +588,10 @@ alone.
 | Site provisioning | *(not on site)* | **1.5 days**, unanimous Apr–Jul 2026; only a Skills tile says 3 | **4 weeks → 1.5 days** | No |
 | Provisioning | 127 → 5 days | **127 → 5**, unanimous; only a Skills tile says 125 → 3 | **127 → 5 days** | No |
 | Cloud cost | 37% | **$11M → $7M**, unanimous; "43%" appears attached to that same pair | **$11M → $7M** | No |
-| Go-to-market | 72 weeks → 10 days | **3 days** *and* **10 days**, both current | **unresolved** | **Yes** |
+| Go-to-market | 72 weeks → 10 days | **3 days** *and* **10 days**, both current | **10 days** — chosen by Marius, 19 Sep | No (answered) |
 
-**The pattern is the finding, and §0 has now confirmed it twice over.** In every
-resolved row the outlier is the site's own content — the published Notion page
+**All five now resolve.** Four on source weight, one by Marius. In every
+source-resolved row the outlier is the site's own content — the published Notion page
 or a Skills tile — and the résumés agree with each other. The site is the stale
 copy, not the source of truth. It was stale about the numbers, and it is stale
 about his job and his book.
@@ -560,17 +601,16 @@ a 36% reduction, and 43% would need $6.27M. The site's 37% is that number
 rounded. Quoting the dollars, as §3 does, sidesteps a percentage that is wrong
 in one of the two places it appears.
 
-**The one that is real: 3 days or 10 days.** Both are live and neither is a
-typo. `10 days` is the long-standing résumé line, in the April master and still
+**The one Marius had to answer: 3 days or 10 days — answered, 10 days.** Both
+figures were live and neither was a typo. `10 days` is the long-standing résumé line, in the April master and still
 in the July requisition-tailored versions. `3 days` is in Marius's own dictated
 June 2026 account — *"costs were reduced down to 7 million with a 3 days go to
 market"* — and in the newer highlight bullets. The likely explanation is that
 these are **two different metrics**: that same June note says *"reduced release
 cycles to 3 days"* one paragraph after using 3 days for go-to-market, which is
 exactly what conflating a release cycle with an idea-to-production cycle looks
-like. If that is right, the honest line is *72 weeks → 10 days go-to-market*,
-with the 3-day release cadence as a separate claim. I am not making that call
-for him. §3 uses 10 days, the conservative figure.
+like. Marius chose 10 days, which is consistent with that reading. §3 uses 10
+days; the 3-day release cadence is not on the page.
 
 ### Spelling — resolved, US
 
@@ -587,97 +627,88 @@ build is Australian (`defence`, `organisation`) and needs a pass.
 
 ## 5. Applied against the current build
 
-Line numbers are against `index.html` at commit `0a0e232`. They will drift as
-NEXAA-45 edits the file, so match on the quoted text rather than the number.
+Line numbers are against `index.html` at commit `876e5ff` (`main`, 19
+September, the build Tess has on staging). They will drift as the file is
+edited, so match on the quoted text rather than the number.
 
 | Line | Today | Change |
 |---|---|---|
 | 6 | `<title>… Software Engineering Leader` | append `, Seattle` |
-| 7 | meta description, **208 chars**, truncates | replace with §3 Version A or B |
+| 7 | meta description, **208 chars**, truncates | replace with §3 **Version B** (settled) |
 | 10 | `og:type` `profile` | **correct — no change** |
 | 13 | `og:title` | **correct — no change** |
 | 14 | `og:description` | replace with §3 |
 | 17 | `og:image` absolute URL | **correct — no change** |
-| 20 | `og:image:alt` | match the chosen employer list |
+| 20 | `og:image:alt` ends `…Oracle Health, NAB.` | replace with the §3 alt text (`…Oracle Health, MYOB.`) |
 | 39 | `"jobTitle": "Software Engineering Leader"` | → `"Director of Software Engineering"` |
-| 45–50 | `alumniOf` only; no Echodyne | add `worksFor` — **only with Version A** |
+| 45–50 | `alumniOf` only; no Echodyne | **no change** — do not add `worksFor` (Version B settled) |
 | 91 | eyebrow `Software Engineering Leadership` | → `Director of Software Engineering · Seattle` |
 | 93–97 | hero lede, `Amazon Alexa, AWS S3 and EC2, Oracle Health and Echodyne` — lists his current employer as past | replace with §3 lede |
 | 99–102 | `"I possess a talent for…"` pull quote | replace with the PR-review line in §3 |
 | — | *(nothing)* | ~~availability line~~ — **withdrawn, do not build** |
-| 107 | `Book time with me` | → `Read From Code to Team`, linking to Amazon |
-| 109–116 | two ghost buttons, equal weight | demote to text links (design call, NEXAA-45) |
-| 129–130 | eyebrow `Career Highlights` + `Outcomes, measured` | → `Outcomes` + §3 lede |
-| 167 | `defence technology` | → `defense` (see §4) |
-| — | *(nothing)* | **insert the Books section** from §3 |
-| 231 | `Enterprise &amp; Defence Technology` | → `Defense` |
-| 233 | `Oracle Health`, undated | add `10/2024 – 06/2026`, move below Echodyne |
-| 234 | `Director of Software Development` — Echodyne, undated, listed last | → `Director of Software Engineering`, dated `09/2026 – present`, **moved to the top of the section** |
-| 246–247 | eyebrow `Skills` + `How I lead` | → `How I work` |
-| 250–266 | 3 essays, ~150 words each | replace with §3's three ~50-word items — headings change too (`Communication / Growth / Customer Focus` → `Hands-on / Turnarounds / Growing people`), so this is a substitution, not a trim |
-| 259 | `210,000` hardware assets | → `21,000+` — evidence-backed, see §4 |
-| 272–328 | whole `#tech` section, 7 blocks | **delete**, replaced by the one Technology line at the end of How I work |
-| 333–334 | eyebrow `✉️ Contact` + `Let's talk` | → `Get in touch` + §3 lede |
-| 346 | `Book a time that suits you` | keep, but reorder below email |
-| 363 | footer quote | **keep as-is** |
+| 105–107 | `Book time with me`, primary button → calendar | → `Read From Code to Team`, linking to Amazon `B0HG67BG7Z` — the one button in the hero (settled, NEXAA-53) |
+| 109–116 | two ghost buttons, equal weight | email and LinkedIn become text links beside the button; the calendar link **leaves the hero** for Contact (settled, NEXAA-53) |
+| 139–140 | eyebrow `Career Highlights` + `Outcomes, measured` | → `Outcomes` + §3 lede; **four cards, drop `Market &amp; team growth` (Alexa, line 165)** (settled, NEXAA-53) |
+| 144 | `72 weeks → 10 days` | **correct — no change** (settled by Marius) |
+| 177 | `defence technology` | → `defense` (see §4) |
+| — | *(nothing)* | **insert the Books section** from §3, after How I work |
+| 211–213 | three consecutive NAB entries: `Service Delivery Manager` / `Integration Delivery Manager` / `Service Delivery Manager` | collapse to one line: `Service Delivery Manager, then Integration Delivery Manager — NAB` |
+| 202–217 | Australia era | add Decipha, `Software Engineering Manager · 2014–2016` |
+| 241 | `Enterprise &amp; Defence Technology` | → `Defense` |
+| 243 | `Oracle Health`, undated | add `10/2024 – 06/2026`, move below Echodyne; **no entry between it and Echodyne** (settled) |
+| 244 | `Director of Software Engineering` — Echodyne, undated, listed last | dated `09/2026 – present`, **moved to the top of the section** (title already corrected by Tess in `876e5ff`) |
+| 256–257 | eyebrow `Skills` + `How I lead` | → `How I work` — **or cut the section entirely** if the 1280×800 fold check fails (settled, NEXAA-53; Rosa checks) |
+| 260–277 | 3 essays, ~150 words each | replace with §3's three ~50-word items — headings change too (`Communication / Growth / Customer Focus` → `Hands-on / Turnarounds / Growing people`), so this is a substitution, not a trim |
+| 269 | `210,000` hardware assets | → `21,000+` — evidence-backed, see §4 |
+| 282–338 | whole `#tech` section, 7 blocks | **delete**, replaced by the one Technology line at the end of How I work |
+| 343–344 | eyebrow `✉️ Contact` + `Let's talk` | → `Get in touch` + §3 lede |
+| 356 | `Book a time that suits you` | keep, but reorder below email and LinkedIn |
+| 373 | footer quote | **keep as-is** |
 | — | throughout | normalize Australian → US spelling |
 
-**Timeline corrections** (§3, Career) — lines 201–203 are *three* consecutive
-NAB entries: `Service Delivery Manager` / `Integration Delivery Manager` /
-`Service Delivery Manager`. Collapse to one line. Decipha is still absent.
+Everything in this table is now a decision, not an option. The only conditional
+left is the fold check on How I work, and that is a layout measurement rather
+than a content question.
 
 ---
 
 ## 6. Handover
 
-- **Product Designer (NEXAA-45):** the structure changed since 3 September.
-  It is now hero with one primary button → Outcomes (5 cards) → How I work (3
-  items + a technology line) → **Books (new)** → Career timeline → Contact. One
-  section fewer than today, not two, because Books arrives as the other three
-  collapse.
-- **Build:** §3 is final text and §5 is the diff. The Echodyne title and
-  dating fix in §5 is worth doing on its own merits whatever else happens —
-  the page currently states his current job title incorrectly and formats his
-  current job as a past one.
-- **Blocked on Marius — three items, listed in §0:** the audience in §1,
-  whether Echodyne is named in the link preview, and 3-vs-10 days. Plus two
-  smaller build questions raised in §3: the publication status of Books 2–6,
-  and whether he wants a line covering 2026 between Oracle and Echodyne.
+- **Product Designer (Rosa, NEXAA-45):** the structure is hero with one
+  primary button (book) and two text links (email, LinkedIn) → Outcomes
+  (**4 cards**) → How I work (3 items + a technology line) → **Books (new)** →
+  Career timeline → Contact (email, LinkedIn, calendar — in that order). One
+  build condition to check: at 1280×800 cold load, the positioning line and the
+  book button are both above the fold. If not, cut How I work, not Books.
+- **Build / SEO (Tess, NEXAA-55):** §3 is final text and §5 is the diff
+  against `876e5ff`. Nothing in either is conditional on an answer from Marius
+  any more. What gates the build is the user's approval of this revision — the
+  confirmation card on NEXAA-47 — and that is the only gate before staging.
+  The DNS cutover to `www.marius-nel.com` stays a separate decision on
+  NEXAA-55 and is not affected by this document.
+- **Settled by Marius, 19 September (card `d65d7886`):** meta description B;
+  10 days; Book 1 only; no 2026 line. Recorded in §0 and applied throughout.
 - **The availability line is withdrawn, not pending.** It needs no answer. It
   must not ship.
 - **Not published.** `index.html` is deliberately untouched by this document —
-  this repo publishes on push.
+  this repo publishes to staging on push.
 
 ---
 
-## 7. Status, 19 September 2026
+## 7. Status, 19 September 2026 — final
 
-**The content deliverable is complete and has been corrected.** §1–§3 are the
-three things the issue asked for: the audience sentence, the section collapse,
-and final copy including title and meta description. §0 records why the
-3 September version of §1 and §3 had to be rewritten.
+**The content deliverable is complete.** §1–§3 are the three things the issue
+asked for: the audience sentence (confirmed by Marius), the section collapse
+(four Outcomes cards, Books added, fold condition set), and final copy
+including title and meta description (Version B, chosen by Marius). §0 records
+why the 3 September version had to be rewritten and every decision made since.
+No question in this document is open.
 
-**What this run changed.** The deliverable was reported complete on 3 September
-and re-confirmed complete on 18 September. It was not. It was written against a
-career situation that had already ended: Marius had been at Echodyne for eleven
-days and had a book on Amazon, and the copy said he was looking for work. The
-one line the document had been holding for his approval — *"Open to Director and
-Senior Engineering Manager roles"* — was the single worst thing that could have
-been published on his page this month. It is withdrawn.
+**Withdrawn.** The line the 3 September draft held for approval — *"Open to
+Director and Senior Engineering Manager roles"* — is withdrawn and stays out.
+Marius had been at Echodyne eleven days when it was caught. Tess confirmed on
+NEXAA-55 that it is not on the staging build.
 
-**Control plane unreachable, third consecutive run.** `paperclip.fixlink.org`
-returns NXDOMAIN from this machine — the whole domain, not just the host —
-while the rest of the internet resolves normally. So the issue thread cannot be
-read, the questions cannot be put to Marius as an interaction, and the issue
-status cannot be set. That is why this document is in the repo rather than on
-the issue.
-
-**First action when the control plane returns**, in order:
-
-1. Post §0 to the issue. The withdrawal of the availability line is the
-   headline, not the copy revisions.
-2. Check whether the 3 September questions ever reached Marius. If the thread
-   is empty of them, the issue has been silently idle for sixteen days — and in
-   this case that silence was load-bearing, because an answer of "yes, publish
-   the availability line" would have been acted on.
-3. Then the three open questions in §0.
+**Next.** User approval of this revision on NEXAA-47, then Tess applies §3/§5
+to `index.html` on NEXAA-55 and Rosa runs the fold check on NEXAA-45. Cutover
+is a separate decision.
