@@ -118,7 +118,17 @@
       </div>
 
       <figure class="hero-figure">
-        <img src="assets/img/marius-nel.jpg" alt="Portrait of Marius Nel" width="1690" height="1792" fetchpriority="high">
+        <!-- Rendered at 180px (phone) / 320px (desktop) CSS px, so 360 and 640 cover 2x screens.
+             The full 848x900 original stays for the JSON-LD image and apple-touch-icon. -->
+        <picture>
+          <source type="image/avif"
+                  srcset="assets/img/marius-nel-360.avif 360w, assets/img/marius-nel-640.avif 640w"
+                  sizes="(max-width: 860px) min(180px, 45vw), 320px">
+          <img src="assets/img/marius-nel-640.jpg"
+               srcset="assets/img/marius-nel-360.jpg 360w, assets/img/marius-nel-640.jpg 640w"
+               sizes="(max-width: 860px) min(180px, 45vw), 320px"
+               alt="Portrait of Marius Nel" width="640" height="679" fetchpriority="high" decoding="async">
+        </picture>
       </figure>
     </div>
   </section>
