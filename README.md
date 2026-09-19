@@ -6,8 +6,8 @@ Notion-hosted page, served from GitHub Pages.
 ## Structure
 
 ```
-index.html            single-page site (hero, highlights, timeline, skills, technology, contact)
-404.html              not-found page
+index.html            single-page site (hero, outcomes, how I work, books, timeline, contact)
+404.html              not-found page; forwards old Notion sub-page URLs to nel-id-au.notion.site
 robots.txt            crawler directives
 sitemap.xml           single-URL sitemap
 .nojekyll             serve files verbatim; skip Jekyll processing
