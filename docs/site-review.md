@@ -210,3 +210,38 @@ The design work is done and reviewable. What is left is not building; it is
 three decisions only Marius can make — the missing career dates, the tripled
 NAB entry, and the missing Decipha role — plus a yes/no on applying the
 rewritten copy. All four are stated in full in the section above.
+
+## Performance and identity check — 18 September 2026 (NEXAA-55)
+
+Re-measured both URLs with a mobile UA and JavaScript off, rather than trusting
+the earlier reports.
+
+| | `www.marius-nel.com` (live) | staging `mario-69-oiram.github.io/marius-nel/` |
+|---|---|---|
+| HTTP | 200, 0.12 s, 20 KB | 200, 0.15 s, 20 KB |
+| `<title>` | `Notion` | `Marius Nel — Software Engineering Leader` |
+| `og:title` / `og:image` | Notion's | Marius's, 1200×630 card |
+| Canonical / `<h1>` / JSON-LD | none / none / none | set / `Marius Nel` / `Person` |
+| Body words without JS | **15** | **778** |
+
+Fifteen days after the build, every link preview of the live domain still
+advertises Notion. Nothing in this repo is what is holding it — the cutover is
+owner-only and the user has said not yet (above). Unchanged, deliberately.
+
+The one gap on the half this repo controls was the headshot: the LCP element on
+every viewport, shipped as a single 848×900 JPEG (132 KB) rendered at 180 CSS px
+on phones and 320 px on desktop, and declared as 1690×1792. PR #1 (`5b23bd7`)
+replaced it with `<picture>` — AVIF plus JPEG fallback at 360w / 640w, chosen by
+`srcset`/`sizes` — and corrected the intrinsic size to 640×679.
+
+| Viewport | Format | Bytes | Δ |
+|---|---|---|---|
+| phone | AVIF | 15.7 KB | −88% |
+| phone | JPEG fallback | 36.5 KB | −72% |
+| desktop | AVIF | 29.3 KB | −78% |
+| desktop | JPEG fallback | 83.9 KB | −37% |
+
+Confirmed on the deployed staging URL after the Pages rebuild: all four variants
+200 with the right `Content-Type` (`image/avif`, `image/jpeg`) at the byte counts
+above. `verify-site.sh` PASS, 780 no-JS words. Headless-Chrome renders at 1280
+and 390 wide unchanged. No copy, design, metadata or DNS change.
