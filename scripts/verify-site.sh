@@ -21,10 +21,14 @@ trap cleanup EXIT
 
 if [ -z "$TARGET" ]; then
   cd "$(dirname "$0")/.."
-  PORT=8931
-  python3 -m http.server "$PORT" >/dev/null 2>&1 &
+  # Bind to a free port rather than a fixed one. A server left behind by an
+  # interrupted run on a fixed port would answer for a different checkout and
+  # the gate would pass the wrong tree — which happened on 2026-09-19.
+  PORT=$(python3 -c 'import socket; s=socket.socket(); s.bind(("127.0.0.1",0)); print(s.getsockname()[1])')
+  python3 -m http.server --bind 127.0.0.1 "$PORT" >/dev/null 2>&1 &
   SERVER_PID=$!
   sleep 2
+  kill -0 "$SERVER_PID" 2>/dev/null || { echo "FAIL: local server did not start on port $PORT"; exit 1; }
   TARGET="http://127.0.0.1:$PORT/"
 fi
 

@@ -196,6 +196,30 @@ serves the content throughout — nothing is deleted at the Notion end by any of
 this — so rollback is a DNS change only, and it takes effect within the TTL set
 in step 1.
 
+## What the cutover breaks: links into the Notion sub-pages
+
+The Notion site is not one page. `Books`, `Book 1` through `Book 6`, `Lunch and
+Learn` and `Skills` are sub-pages, and they have been shared as
+`www.marius-nel.com/<Title>-<32-hex-id>` — Marius sent the Book 1 link that way
+in an email on 11 September. After DNS moves, every one of those paths lands on
+GitHub Pages, which has no such page.
+
+Notion keeps serving them at the workspace's own hostname,
+`nel-id-au.notion.site` (workspace domain `nel-id-au`, confirmed from Notion's
+public page data on 19 September; the Books page is public, reader role, no
+login). So:
+
+- `404.html` forwards any path that ends in a 32-hex Notion id to
+  `https://nel-id-au.notion.site/<same path>`. This is a client-side redirect
+  — Pages cannot do server-side ones — so it works for people, not crawlers.
+  That is acceptable: those pages were never indexed under a title of their
+  own, and the front page links straight to the Books page.
+- The Books section on the front page links to the `notion.site` address, not
+  the custom domain, so it survives the cutover unchanged.
+
+If the custom domain is later removed from Notion's Site settings, nothing
+here changes: the `notion.site` address is the one that was always there.
+
 ## Verifying the cutover
 
 `verify-site.sh` answers "is the HTML right?". It follows redirects and does not

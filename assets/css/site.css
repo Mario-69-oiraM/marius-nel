@@ -181,6 +181,14 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .btn-ghost { background: var(--surface); border-color: var(--border-firm); color: var(--text); }
 .btn-ghost:hover { background: var(--bg-alt); color: var(--text); }
 
+/* One primary action; email and LinkedIn sit beside it as plain links so
+   there is only one button competing for the eye. */
+.cta-link {
+  display: inline-flex; align-items: center; padding: .68rem .45rem;
+  font-size: .94rem; font-weight: 580; color: var(--accent-text);
+}
+.cta-link:hover { color: var(--text); }
+
 .hero-figure { margin: 0; justify-self: center; }
 .hero-figure img {
   width: min(320px, 72vw); aspect-ratio: 1; object-fit: cover; object-position: 50% 22%;
@@ -195,14 +203,17 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 
 /* ---------- highlight cards ---------- */
 
-/* Five cards: 3 + 2 reads better than 4 + 1, so cap the track count at three. */
+/* Four cards: 2 + 2 on a laptop, one row of four on a wide screen. Never 3 + 1. */
 .cards {
   list-style: none; padding: 0; margin: 2rem 0 0;
   display: grid; gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
 }
-@media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
+@media (min-width: 700px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px) {
+  .cards { grid-template-columns: repeat(4, 1fr); }
 }
 
 .card {
@@ -259,6 +270,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 }
 .era .role { display: block; font-weight: 580; font-size: .95rem; line-height: 1.4; }
 .era .org  { display: block; font-size: .87rem; color: var(--text-muted); }
+.era .when { display: block; font-size: .8rem; color: var(--text-faint); font-variant-numeric: tabular-nums; }
 
 /* ---------- skills ---------- */
 
@@ -278,21 +290,25 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .skill p:last-child { margin-bottom: 0; }
 .skill strong { color: var(--text); font-weight: 640; }
 
-/* ---------- technology ---------- */
+/* The one technology line that replaced the seven-block inventory. */
+.tech-line { margin: 1.6rem 0 0; max-width: 72ch; font-size: .95rem; color: var(--text-muted); }
+.tech-line strong { color: var(--text); font-weight: 640; }
 
-.tech-grid {
-  display: grid; gap: 1.6rem 2rem; margin-top: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* ---------- books ---------- */
+
+.books-grid {
+  display: grid; gap: 1rem; margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-.tech-block h3 {
-  font-size: .78rem; text-transform: uppercase; letter-spacing: .11em;
-  color: var(--text-faint); margin-bottom: .75rem;
+.book {
+  display: flex; flex-direction: column; gap: .35rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.5rem 1.6rem; box-shadow: var(--shadow-sm);
 }
-.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
-.chips li {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
-  padding: .3rem .75rem; font-size: .85rem; color: var(--text-muted); white-space: nowrap;
-}
+.book h3 { font-size: 1.2rem; margin: 0; }
+.book .book-sub { font-family: var(--serif); font-style: italic; color: var(--text-muted); margin: 0 0 .5rem; }
+.book p { font-size: .95rem; color: var(--text-muted); }
+.book .btn { align-self: flex-start; margin-top: auto; }
 
 /* ---------- contact ---------- */
 
@@ -351,8 +367,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 }
 
 @media print {
-  .site-header, .cta-row, .contact-card svg { display: none; }
+  .site-header, .cta-row, .book .btn, .contact-card svg { display: none; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .section, .section-alt { border: 0; background: #fff; padding: 1rem 0; }
-  .card, .era, .skill, .contact-card { break-inside: avoid; box-shadow: none; }
+  .card, .era, .skill, .book, .contact-card { break-inside: avoid; box-shadow: none; }
 }
